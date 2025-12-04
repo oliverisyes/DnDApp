@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "DnDApp (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "DnDApp (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
