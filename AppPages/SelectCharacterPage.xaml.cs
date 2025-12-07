@@ -1,3 +1,4 @@
+using ABI.Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -28,8 +29,9 @@ namespace DnDApp.AppPages
 		String character3 = "Ash";
 		String character4 = "Jen";
 		String character5 = "Enphi";
-        List<String> charList = new List<string>(); 
-        bool charSetup = false;
+        List<String> charList = new List<string>();
+        int charSetup = 1;
+        int charCols = 4;
 
 		public SelectCharacterPage()
         {
@@ -38,10 +40,18 @@ namespace DnDApp.AppPages
 			charList.Add(character3);
 			charList.Add(character4);
 			charList.Add(character5);
-
+			
 			InitializeComponent();
-            LoadCharList();
-        }
+
+            if (charSetup == 0)
+            {
+                LoadCharList();
+            }
+            else if (charSetup == 1)
+            {
+                LoadCharGrid();
+            }
+		}
 
         private void LoadCharList()
         {
@@ -55,7 +65,25 @@ namespace DnDApp.AppPages
 
         private void LoadCharGrid()
         {
+            StackPanel charPanel = this.charPanel;
 
+            for (int i = 0; i < charList.Count / charCols; i++)
+            {
+                charPanel.Children.Add(CharGridLayer());
+            }
+        }
+        private Grid CharGridLayer()
+        {
+            Grid layer = new();
+
+            for (int i = 0; i < charCols; i++)
+            {
+                Button button = LoadCharButton(charPanel, i);
+                
+				layer.Children.Add(button);
+            }
+
+            return layer;
         }
 
         private Button LoadCharButton(StackPanel charPanel, int charNum)
@@ -64,6 +92,11 @@ namespace DnDApp.AppPages
             charButton.Name = charList[charNum];
             charButton.Content = charList[charNum];
             charButton.HorizontalAlignment = HorizontalAlignment.Stretch;
+
+            for (int i = 0; i < 7; i++)
+            {
+                
+            }
 
             return charButton;
         }

@@ -9,25 +9,7 @@
     mc:Ignorable="d"
     Title="DnDApp">
 
-    <Window.SystemBackdrop>
-        <MicaBackdrop />
-    </Window.SystemBackdrop>
-
-<<<<<<< Updated upstream
-    <Grid>
-        
-    </Grid>
-=======
-    <Grid x:Name="rootElement" RowDefinitions="100, *, 100, *">
-		<StackPanel x:Name="customTitleBarPanel" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Top" Visibility="Visible">
-			<Image Source="/Assets/computer.ico"/>
-			<TextBlock VerticalAlignment="Center" Text="Title bar customisation"/>
-		</StackPanel>
-
-		<StackPanel x:Name="buttonPanel" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
-			<Button x:Name="basicButton" Click="basicButton_Click" Margin="25">Set window title and icon</Button>
-			<Button x:Name="customButton" Click="customButton_Click" Margin="25">Customise window title bar</Button>
-		</StackPanel>
-	</Grid>
->>>>>>> Stashed changes
+	<Window.SystemBackdrop>
+		<MicaBackdrop />
+	</Window.SystemBackdrop>
 </Window>

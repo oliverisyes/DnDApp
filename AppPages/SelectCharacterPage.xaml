@@ -8,11 +8,11 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid>
+	<Grid>
 		<ScrollView HorizontalAlignment="Center" VerticalAlignment="Center">
-			<StackPanel x:Name="charPanel" Width="100">
-				
+			<StackPanel x:Name="charPanel" Width="300">
+
 			</StackPanel>
 		</ScrollView>
-    </Grid>
+	</Grid>
 </Page>

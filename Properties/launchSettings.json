@@ -1,7 +1,9 @@
 {
   "profiles": {
     "DnDApp (Package)": {
-      "commandName": "MsixPackage"
+      "commandName": "MsixPackage",
+      "alwaysReinstallApp": true,
+      "doNotLaunchApp": false
     },
     "DnDApp (Unpackaged)": {
       "commandName": "Project"
