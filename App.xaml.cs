@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using DnDApp.AppPages;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -44,6 +45,18 @@ namespace DnDApp
         protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
         {
             _window = new MainWindow();
+            _window.Activate();
+
+
+            // Create a Frame to act as the navigation context and navigate to the first page
+            Frame rootFrame = new Frame();
+            // Navigate to the first page, configuring the new page
+            // by passing required information as a navigation parameter
+            rootFrame.Navigate(typeof(SelectCharacterPage), args.Arguments);
+
+            // Place the frame in the current Window
+            _window.Content = rootFrame;
+            // Ensure the MainWindow is active
             _window.Activate();
         }
     }
