@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
@@ -45,6 +45,7 @@
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.7175" />
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.251106002" />
   </ItemGroup>
+<<<<<<< Updated upstream
   <ItemGroup>
     <Page Update="AppPages\SelectCharacterPage.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -60,6 +61,11 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
+=======
+  <PropertyGroup Label="Globals">
+    <WebView2UseWinRT>False</WebView2UseWinRT>
+  </PropertyGroup>
+>>>>>>> Stashed changes
 
   <!--
     Defining the "HasPackageAndPublishMenuAddedByProject" property here allows the Solution

@@ -27,6 +27,30 @@ namespace DnDApp
         public MainWindow()
         {
             InitializeComponent();
-        }
-    }
+			// Enable custom bar
+			ExtendsContentIntoTitleBar = true;
+			// Set the content of bar
+			SetTitleBar(customTitleBarPanel);
+		}
+
+        private void basicButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Ensure title bar is boring and uncustomised
+            customTitleBarPanel.Visibility = Visibility.Collapsed;
+
+            // Disable custom title bar content
+            ExtendsContentIntoTitleBar = false;
+            
+		}
+
+        private void customButton_Click(object sender, RoutedEventArgs e)
+        {
+            customTitleBarPanel.Visibility= Visibility.Visible;
+
+            // Enable custom bar
+            ExtendsContentIntoTitleBar = true;
+            // Set the content of bar
+            SetTitleBar(customTitleBarPanel);
+		}
+	}
 }
