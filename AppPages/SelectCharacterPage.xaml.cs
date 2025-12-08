@@ -1,18 +1,10 @@
 using ABI.Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Controls.Primitives;
-using Microsoft.UI.Xaml.Data;
-using Microsoft.UI.Xaml.Input;
-using Microsoft.UI.Xaml.Media;
-using Microsoft.UI.Xaml.Navigation;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+using Window = Microsoft.UI.Xaml.Window;
+
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -30,7 +22,7 @@ namespace DnDApp.AppPages
 		String character4 = "Jen";
 		String character5 = "Enphi";
         List<String> charList = new List<string>();
-        int charSetup = 1;
+        int charSetup = 0;
         int charCols = 4;
 
 		public SelectCharacterPage()
@@ -89,14 +81,18 @@ namespace DnDApp.AppPages
         private Button LoadCharButton(StackPanel charPanel, int charNum)
         {
             Button charButton = new Button();
+
             charButton.Name = charList[charNum];
             charButton.Content = charList[charNum];
             charButton.HorizontalAlignment = HorizontalAlignment.Stretch;
-
-            for (int i = 0; i < 7; i++)
+            charButton.Click += (s, e) =>
             {
-                
-            }
+                Window window = new Window();
+                Frame rootFrame = new Frame();
+				rootFrame.Navigate(typeof(CharacterPage));
+                window.Content = rootFrame;
+                window.Activate();
+			};
 
             return charButton;
         }
