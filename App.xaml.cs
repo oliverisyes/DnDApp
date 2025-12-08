@@ -61,5 +61,7 @@ namespace DnDApp
 			//_window.SetTitleBar(CreateTitlebar());
 			
 		}
+
+        
     }
 }
