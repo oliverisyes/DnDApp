@@ -1,3 +1,5 @@
+using Microsoft.UI;
+using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -23,9 +25,22 @@ namespace DnDApp.AppPages
     /// </summary>
     public sealed partial class CharacterPage : Page
     {
+        AppWindow m_appWindow;
+
         public CharacterPage()
         {
             InitializeComponent();
+            m_appWindow = GetAppWindowForCurrentWindow();
+            m_appWindow.SetPresenter(AppWindowPresenterKind.FullScreen);
         }
-    }
+
+		private AppWindow GetAppWindowForCurrentWindow()
+		{
+            var window = (App.Current as App);
+			IntPtr hWnd = WinRT.Interop.WindowNative.GetWindowHandle(window);
+			WindowId myWndId = Microsoft.UI.Win32Interop.GetWindowIdFromWindow(hWnd);
+
+			return AppWindow.GetFromWindowId(myWndId);
+		}
+	}
 }

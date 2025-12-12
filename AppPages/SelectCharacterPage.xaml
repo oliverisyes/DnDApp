@@ -10,7 +10,7 @@
 
 	<Grid>
 		<Grid>
-			<TextBlock x:Name="DnD App"/>
+			<TextBlock x:Name="DnDApp"/>
 		</Grid>
 		
 		<ScrollView HorizontalAlignment="Center" VerticalAlignment="Center">

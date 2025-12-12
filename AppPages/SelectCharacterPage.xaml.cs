@@ -1,8 +1,11 @@
 using ABI.Microsoft.UI.Xaml;
+using Microsoft.UI;
+using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using System;
 using System.Collections.Generic;
+using WinRT.Interop;
 using Window = Microsoft.UI.Xaml.Window;
 
 
@@ -91,10 +94,11 @@ namespace DnDApp.AppPages
                 Frame rootFrame = new Frame();
 				rootFrame.Navigate(typeof(CharacterPage));
                 window.Content = rootFrame;
+                
                 window.Activate();
 			};
 
             return charButton;
         }
-    }
+	}
 }
