@@ -15,7 +15,9 @@
   </PropertyGroup>
   <ItemGroup>
     <None Remove="AppPages\CharacterPage.xaml" />
-    <None Remove="AppPages\SelectCharacterPage.xaml" />
+    <None Remove="AppWindows\CharacterWindow.xaml" />
+    <None Remove="AppWindows\NewCharacterWindow.xaml" />
+    <None Remove="AppWindows\SelectCharacterWindow.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -45,12 +47,22 @@
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.251106002" />
   </ItemGroup>
   <ItemGroup>
+    <Page Update="AppWindows\NewCharacterWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="AppWindows\CharacterWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
     <Page Update="AppPages\CharacterPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="AppPages\SelectCharacterPage.xaml">
+    <Page Update="AppWindows\SelectCharacterWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
