@@ -13,7 +13,7 @@
         <MicaBackdrop />
     </Window.SystemBackdrop>
 
-    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="700" Height="500">
+    <Grid x:Name="BaseGrid" HorizontalAlignment="Center" VerticalAlignment="Center" Width="700" Height="500">
 		<StackPanel Width="400" Height="200">
 			<Grid Margin="0 0 0 20">
 				<Grid.ColumnDefinitions>
@@ -53,8 +53,8 @@
 				<ColumnDefinition/>
 			</Grid.ColumnDefinitions>
 
-			<Button Content="Cancel" Width="70" Margin="0 0 10 0" Grid.Column="0"/>
-			<Button Content="Next" Width="70" Grid.Column="1"/>
+			<Button Content="Cancel" Click="CancelButton_Click" Width="70" Margin="0 0 10 0" Grid.Column="0"/>
+			<Button Content="Next" Click="NextButton_Click" Width="70" Grid.Column="1"/>
 		</Grid>
 	</Grid>
 </Window>

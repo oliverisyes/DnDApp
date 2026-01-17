@@ -26,6 +26,30 @@ namespace DnDApp.AppWindows
         public NewCharacterWindow()
         {
             InitializeComponent();
+
+            BaseGrid.Children.Add(newCharStackPanel());
         }
-    }
+
+        private StackPanel newCharStackPanel()
+        {
+            StackPanel stackPanel = new StackPanel();
+
+            return stackPanel;
+        }
+
+		private void CreateButton_Click(object sender, RoutedEventArgs e)
+		{
+
+		}
+
+		private void NextButton_Click(object sender, RoutedEventArgs e)
+		{
+
+		}
+
+		private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+	}
 }

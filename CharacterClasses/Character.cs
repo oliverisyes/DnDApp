@@ -9,6 +9,8 @@ namespace DnDApp.CharacterClasses
 {
     internal class Character
     {
+        private string _filePath;
+
         private string _name;
 
         private int _level;

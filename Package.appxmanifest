@@ -9,8 +9,8 @@
 
   <Identity
     Name="3f2af5c6-180d-4caf-bf60-752f21419317"
-    Publisher="CN=olive"
-    Version="1.0.0.0" />
+    Publisher="CN=Oliver Howard"
+    Version="0.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="3f2af5c6-180d-4caf-bf60-752f21419317" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 

@@ -1,5 +1,6 @@
 using DnDApp.AppPages;
 using DnDApp.CharacterClasses;
+using DnDApp.Helpers;
 using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -31,7 +32,7 @@ namespace DnDApp.AppWindows
 		String character3 = "Ash";
 		String character4 = "Jen";
 		String character5 = "Enphi";
-		List<String> charList = new List<string>();
+		public static List<String> charList = new List<string>();
 		int charSetup = 0;
 		int charCols = 4;
 
@@ -92,11 +93,7 @@ namespace DnDApp.AppWindows
 
 		private Button LoadCharButton(StackPanel charPanel, int charNum)
 		{
-			Button charButton = new Button();
-
-			charButton.Name = charList[charNum];
-			charButton.Content = charList[charNum];
-			charButton.HorizontalAlignment = HorizontalAlignment.Stretch;
+			Button charButton = UIHelper.CreateButton("listchar", charNum);
 			charButton.Click += (s, e) =>
 			{
 				Window window = new CharacterWindow();
@@ -114,7 +111,7 @@ namespace DnDApp.AppWindows
 			return charButton;
 		}
 
-        private void NewChar_Click(object sender, RoutedEventArgs e)
+        private void CharButton_Click(object sender, RoutedEventArgs e)
         {
 			Character.NewCharWindow();
         }

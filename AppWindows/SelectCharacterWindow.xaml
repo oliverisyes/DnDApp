@@ -27,7 +27,7 @@
 				</Grid.ColumnDefinitions>
 
 				<AutoSuggestBox PlaceholderText="Enter character name" QueryIcon="Find" Grid.Column="0"/>
-				<Button Content="New Character" Click="NewChar_Click" Grid.Column="1" Margin="10 0 10 0"/>
+				<Button Content="New Character" Click="CharButton_Click" Grid.Column="1" Margin="10 0 10 0"/>
 				<Button Content="Open Character" Grid.Column="2"/>
 			</Grid>
 
