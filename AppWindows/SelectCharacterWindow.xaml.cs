@@ -105,7 +105,7 @@ namespace DnDApp.AppWindows
 
 				window.Activate();
 
-				AppWindow.Destroy();
+				//AppWindow.Destroy();
 			};
 
 			return charButton;
