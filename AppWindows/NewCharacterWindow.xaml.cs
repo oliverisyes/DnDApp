@@ -1,3 +1,4 @@
+using DnDApp.Helpers;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -26,13 +27,27 @@ namespace DnDApp.AppWindows
         public NewCharacterWindow()
         {
             InitializeComponent();
+            //BaseGrid.ColumnDefinitions.Add(new ColumnDefinition());
+            //BaseGrid.RowDefinitions.Add(new RowDefinition());
+            //Button button = new Button();
+            //Grid.SetColumn(button, 1);
+            //Grid.SetRow(button, 1);
+            //button.Content = "aaaa";
+			//BaseGrid.Children.Add(button);
+			//button.Visibility = Visibility.Visible;
+			//Grid.SetColumn(newCharStackPanel(["name", "location", "accent colour"]), 0);
+			BaseGrid.Children.Add(newCharStackPanel(["name", "location", "accent colour"]));
+		}
 
-            BaseGrid.Children.Add(newCharStackPanel());
-        }
-
-        private StackPanel newCharStackPanel()
+        private StackPanel newCharStackPanel(String[] settings)
         {
             StackPanel stackPanel = new StackPanel();
+            //stackPanel.Children.Add(new Button());
+            foreach (String s in settings)
+            {
+				stackPanel.Children.Add(new Button());
+				stackPanel.Children.Add(UIHelper.CreateSettingGrid(s));
+            }
 
             return stackPanel;
         }

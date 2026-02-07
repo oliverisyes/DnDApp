@@ -3,6 +3,7 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,7 +41,7 @@ namespace DnDApp.Helpers
 					
 				}
 
-                button.Name = Capitalise(type);
+                button.Name = type;
                 button.Content = Capitalise(type);
                 button.Width = 70;
 
@@ -49,7 +50,12 @@ namespace DnDApp.Helpers
 					button.Margin = new Thickness(0, 0, 10, 0);
 				}
 			}
-            
+            else if (type == "browse")
+            {
+                button.Name = type;
+                button.Content = Capitalise(type);
+            }
+
             return button;
         }
 
@@ -69,9 +75,69 @@ namespace DnDApp.Helpers
             return grid;
         }
 
+        public static Grid CreateSettingGrid(string setting)
+        {
+            Grid grid = new Grid();
+
+            grid.ColumnDefinitions.Add(new ColumnDefinition());
+            grid.ColumnDefinitions.Add(new ColumnDefinition());
+
+            Grid.SetColumn(CreateSettingName(setting), 0);
+            Grid.SetColumn(CreateSettingInput(setting), 1);
+
+            return grid;
+        }
+
+        private static TextBlock CreateSettingName(string setting)
+        {
+            TextBlock textBlock = new TextBlock();
+
+            textBlock.Text = Capitalise(setting);
+            
+            return textBlock;
+        }
+
+        private static FrameworkElement CreateSettingInput(string setting)
+        {
+			if (setting == "name" || setting == "accent colour")
+            {
+                TextBox input = new TextBox();
+
+                if (setting == "name")
+                {
+                    input.PlaceholderText = "Character Name";
+                }
+                else if (setting == "accent colour")
+                {
+                    input.PlaceholderText = "colour hex code";
+                }
+
+                return input;
+            }
+            else if (setting == "location")
+            {
+                Button input = new Button();
+
+                if (setting == "location")
+                {
+                    input = CreateButton("browse", 0);
+				}
+
+                return input;
+            }
+            else
+            {
+				TextBlock input = new TextBlock();
+				input.Text = "Element Failed";
+                return input;
+			}
+        }
+
         public static string Capitalise(string input)
         {
-            return input.Substring(0, 1) + input.Substring(1);
-		}
+			TextInfo ti = CultureInfo.CurrentCulture.TextInfo;
+            ti.ToTitleCase(input);
+			return input;
+        }
     }
 }
