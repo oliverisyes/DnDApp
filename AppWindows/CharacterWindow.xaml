@@ -19,21 +19,14 @@
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="*"/>
 					<ColumnDefinition Width="*"/>
-					<ColumnDefinition Width="*"/>
-					<ColumnDefinition Width="*"/>
-					<ColumnDefinition Width="*"/>
 				</Grid.ColumnDefinitions>
 				<Grid.RowDefinitions>
-					<RowDefinition Height="*"/>
-					<RowDefinition Height="*"/>
-					<RowDefinition Height="*"/>
-					<RowDefinition Height="*"/>
-					<RowDefinition Height="*"/>
-					<RowDefinition Height="*"/>
-					<RowDefinition Height="*"/>
+					<RowDefinition Height="0.2*"/>
+					<RowDefinition Height="0.2*"/>
+					<RowDefinition Height="0.6*"/>
 				</Grid.RowDefinitions>
-				
-				<Grid x:Name="CharInfoContainer" Width="380" Height="110" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" HorizontalAlignment="Left">
+
+				<Grid x:Name="CharInfoContainer" Width="380" Height="110" Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="0" Grid.RowSpan="1" HorizontalAlignment="Left">
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="0.35*"/>
 						<ColumnDefinition Width="*"/>
@@ -107,7 +100,7 @@
 							</Grid.Background>
 
 							<TextBlock x:Name="CharLevel" Text="Level 3" FontSize="11" Grid.Column="0" Grid.Row="0" Margin="13 0 0 0" VerticalAlignment="Center"/>
-							<Line x:Name="CharXP" Stroke="Lavender" X1="0" X2="110" StrokeThickness="1" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center"/>
+							<Line x:Name="CharXP" Stroke="Lavender" X1="0" X2="150" StrokeThickness="1" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center"/>
 						</Grid>
 					</Grid>
 
@@ -119,12 +112,13 @@
 							<RowDefinition Height="*"/>
 						</Grid.RowDefinitions>
 
-						<Image x:Name="CharImage" Source="C:\Users\olive\OneDrive\My stuff\DnD Characters\AppCharacters\Enphi\EnphiProfilePic.png" Grid.Column="0" Grid.Row="0"/>
+						<!--<Image x:Name="CharImage" Source="C:\Users\olive\OneDrive\My stuff\DnD Characters\AppCharacters\Enphi\EnphiProfilePic.png" Grid.Column="0" Grid.Row="0"/>-->
+						<Image x:Name="CharImage" Source="C:\Users\Oliver Howard\OneDrive\My stuff\DnD Characters\AppCharacters\Enphi\EnphiProfilePic.png" Grid.Column="0" Grid.Row="0"/>
 						<Rectangle x:Name="CharImageBorder" Stroke="MediumPurple" StrokeThickness="3" RadiusX="100" RadiusY="100"/>
 					</Grid>
 				</Grid>
 
-				<Grid x:Name="AbilityScoresContainer" Width="550" Height="115" HorizontalAlignment="Left" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1">
+				<Grid x:Name="AbilityScoresContainer" Width="550" Height="115" HorizontalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="1" Grid.RowSpan="1">
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="10*"/>
 						<ColumnDefinition Width="*"/>
@@ -216,7 +210,7 @@
 					</StackPanel>
 				</Grid>
 
-				<Grid x:Name="SavingThrowsContainer" Width="330" Height="220" Padding="15 5 15 0" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" Grid.RowSpan="2" HorizontalAlignment="Left" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="40">
+				<Grid x:Name="SavingThrowsContainer" Width="330" Height="220" Padding="15 5 15 0" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="2" Grid.RowSpan="1" HorizontalAlignment="Left" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="40">
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="*"/>
 						<ColumnDefinition Width="0.15*"/>
@@ -318,7 +312,7 @@
 					</StackPanel>
 				</Grid>
 
-				<Grid x:Name="SkillsContainer" Width="650" Height="390" Padding="15 5 15 0" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" Grid.RowSpan="4" HorizontalAlignment="Left" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="40">
+				<Grid x:Name="SkillsContainer" Width="650" Height="390" Padding="15 5 15 0" Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="3" Grid.RowSpan="5" HorizontalAlignment="Center" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="40">
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="*"/>
 						<ColumnDefinition Width="0.08*"/>
@@ -581,7 +575,7 @@
 					</StackPanel>
 				</Grid>
 
-				<StackPanel x:Name="VitalsInfoContainer" Width="260" Height="600" Grid.Column="3" Grid.Row="0" Grid.RowSpan="3">
+				<StackPanel x:Name="VitalsInfoContainer" Width="260" Height="600" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0" Grid.RowSpan="3">
 					<StackPanel x:Name="ArmourInitiativeSpeedContainer" Orientation="Horizontal" Margin="0 0 0 10">
 						<StackPanel x:Name="ArmourContainer" Width="80" Height="90" Margin="0 0 10 0" Padding="10 10 10 0" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="15">
 							<StackPanel.Background>
@@ -628,13 +622,14 @@
 					</StackPanel>
 					<StackPanel x:Name="HitDiceDeathSaveContainer" Orientation="Horizontal">
 
-						<StackPanel x:Name="HitDiceContainer" Width="120" Margin="0 0 5 0" Padding="20" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="15">
+						<StackPanel x:Name="HitDiceContainer" Width="100" Margin="0 0 5 0" Padding="10" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="15">
 							<StackPanel.Background>
 								<SolidColorBrush Color="Black" Opacity="0.4"/>
 							</StackPanel.Background>
 
-							<TextBlock Text="Hit Dice" HorizontalAlignment="Center"/>
-							<TextBlock Text="3/3" FontSize="30" HorizontalAlignment="Center"/>
+							<TextBlock Text="Hit Dice" Margin="0 0 0 3" HorizontalAlignment="Center"/>
+							<TextBlock Text="Current: 3" FontSize="17" HorizontalAlignment="Center"/>
+							<TextBlock Text="Max: 3" FontSize="15" HorizontalAlignment="Center"/>
 						</StackPanel>
 						<StackPanel x:Name="DeathSaveContainer" Width="120" Margin="5 0 0 0" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="15">
 							<StackPanel.Background>
@@ -645,9 +640,9 @@
 
 							<StackPanel x:Name="SuccessesContainer" Orientation="Horizontal">
 								<TextBlock Text="Successes" VerticalAlignment="Center"/>
-								<CheckBox CornerRadius="10"/>
-								<CheckBox CornerRadius="10"/>
-								<CheckBox CornerRadius="10"/>
+								<ToggleButton Width="10" Height="10" BorderBrush="Lavender" CornerRadius="100"/>
+								<ToggleButton Width="10" Height="10" BorderBrush="Lavender" CornerRadius="100"/>
+								<ToggleButton Width="10" Height="10" BorderBrush="Lavender" CornerRadius="100"/>
 							</StackPanel>
 							<StackPanel x:Name="FailuresContainer" Orientation="Horizontal">
 								<TextBlock Text="Failures" VerticalAlignment="Center"/>
