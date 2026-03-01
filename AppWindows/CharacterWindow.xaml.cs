@@ -1,3 +1,4 @@
+using DnDApp.AppPages;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -26,6 +27,21 @@ namespace DnDApp.AppWindows
         public CharacterWindow()
         {
             InitializeComponent();
+
+            // Create a Frame to act as the navigation context.
+            Frame rootFrame = new Frame();
+
+            rootFrame.NavigationFailed += OnNavigationFailed;
+
+            // Place the frame in the current Window
+            this.navview.Content = rootFrame;
+
+            rootFrame.Navigate(typeof(CharacterPage));
+        }
+
+        private void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }
