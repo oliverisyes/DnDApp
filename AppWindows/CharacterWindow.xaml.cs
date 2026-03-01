@@ -4,6 +4,7 @@ using Microsoft.UI.Xaml.Controls.Primitives;
 using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
+using Microsoft.UI.Xaml.Media.Animation;
 using Microsoft.UI.Xaml.Navigation;
 using System;
 using System.Collections.Generic;
@@ -27,5 +28,20 @@ namespace DnDApp.AppWindows
         {
             InitializeComponent();
         }
-    }
+
+		int previousSelectedIndex = 0;
+		private void InventoryBar_SelectionChanged(SelectorBar sender, SelectorBarSelectionChangedEventArgs args)
+		{
+			SelectorBarItem selectedItem = sender.SelectedItem;
+			int currentSelectedIndex = sender.Items.IndexOf(selectedItem);
+
+			//ItemsContainer.Children.Clear();
+			ItemsContainer.Children.Add(ActionsItemScroll);
+
+			//ItemsContainer.Children[previousSelectedIndex].Visibility = Visibility.Collapsed;
+			ItemsContainer.Children[currentSelectedIndex].Visibility = Visibility.Visible;
+
+			//previousSelectedIndex = currentSelectedIndex;
+		}
+	}
 }

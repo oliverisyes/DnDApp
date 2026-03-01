@@ -17,16 +17,23 @@
 		<NavigationView>
 			<Grid x:Name="MotherGrid" Padding="50">
 				<Grid.ColumnDefinitions>
-					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="20"/>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="20"/>
+					<ColumnDefinition Width="Auto"/>
 					<ColumnDefinition Width="*"/>
 				</Grid.ColumnDefinitions>
 				<Grid.RowDefinitions>
-					<RowDefinition Height="0.2*"/>
-					<RowDefinition Height="0.2*"/>
-					<RowDefinition Height="0.6*"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="20"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="20"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="*"/>
 				</Grid.RowDefinitions>
 
-				<Grid x:Name="CharInfoContainer" Width="380" Height="110" Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="0" Grid.RowSpan="1" HorizontalAlignment="Left">
+				<Grid x:Name="CharInfoContainer" Width="400" Height="120" Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="0" Grid.RowSpan="1" HorizontalAlignment="Center">
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="0.35*"/>
 						<ColumnDefinition Width="*"/>
@@ -69,8 +76,8 @@
 									<RowDefinition Height="*"/>
 									<RowDefinition Height="*"/>
 								</Grid.RowDefinitions>
-								<TextBlock x:Name="Name" Text="Enphi" FontSize="13" Grid.Column="0" Grid.Row="0" Margin="0 0 0 0" VerticalAlignment="Center"/>
-								<TextBlock x:Name="Gender" Text="Female She/Her" FontSize="13" Grid.Column="1" Grid.Row="0" Margin="0 0 0 0" VerticalAlignment="Center"/>
+								<TextBlock x:Name="Name" Text="Enphi" Grid.Column="0" Grid.Row="0" Margin="0 0 0 0" VerticalAlignment="Center"/>
+								<TextBlock x:Name="Gender" Text="Female She/Her" Grid.Column="1" Grid.Row="0" Margin="0 0 0 0" VerticalAlignment="Center"/>
 							</Grid>
 
 							<MenuFlyoutSeparator Width="170" Grid.Column="1" Margin="0 3 30 0"/>
@@ -85,8 +92,8 @@
 									<RowDefinition Height="*"/>
 								</Grid.RowDefinitions>
 
-								<TextBlock x:Name="Species" Text="Tiefling" FontSize="13" Grid.Column="0" Grid.Row="1" Margin="0 0 0 0" VerticalAlignment="Center"/>
-								<TextBlock x:Name="Class" Text="Druid" FontSize="13" Grid.Column="1" Grid.Row="1" Margin="0 0 0 0" VerticalAlignment="Center"/>
+								<TextBlock x:Name="Species" Text="Tiefling" Grid.Column="0" Grid.Row="1" Margin="0 0 0 0" VerticalAlignment="Center"/>
+								<TextBlock x:Name="Class" Text="Druid" Grid.Column="1" Grid.Row="1" Margin="0 0 0 0" VerticalAlignment="Center"/>
 							</Grid>
 						</Grid>
 						<Grid x:Name="CharLevelInfo" Grid.Column="1" Grid.Row="1" BorderBrush="MediumPurple" BorderThickness="2 0 2 2" CornerRadius="0 0 20 20">
@@ -99,7 +106,7 @@
 								<SolidColorBrush Color="Black" Opacity="0.4"/>
 							</Grid.Background>
 
-							<TextBlock x:Name="CharLevel" Text="Level 3" FontSize="11" Grid.Column="0" Grid.Row="0" Margin="13 0 0 0" VerticalAlignment="Center"/>
+							<TextBlock x:Name="CharLevel" Text="Level 3" FontSize="13" Grid.Column="0" Grid.Row="0" Margin="13 0 0 5" VerticalAlignment="Center"/>
 							<Line x:Name="CharXP" Stroke="Lavender" X1="0" X2="150" StrokeThickness="1" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center"/>
 						</Grid>
 					</Grid>
@@ -112,13 +119,13 @@
 							<RowDefinition Height="*"/>
 						</Grid.RowDefinitions>
 
-						<!--<Image x:Name="CharImage" Source="C:\Users\olive\OneDrive\My stuff\DnD Characters\AppCharacters\Enphi\EnphiProfilePic.png" Grid.Column="0" Grid.Row="0"/>-->
-						<Image x:Name="CharImage" Source="C:\Users\Oliver Howard\OneDrive\My stuff\DnD Characters\AppCharacters\Enphi\EnphiProfilePic.png" Grid.Column="0" Grid.Row="0"/>
+						<Image x:Name="CharImage" Source="C:\Users\olive\OneDrive\My stuff\DnD Characters\AppCharacters\Enphi\EnphiProfilePic.png" Grid.Column="0" Grid.Row="0"/>
+						<!--<Image x:Name="CharImage" Source="C:\Users\Oliver Howard\OneDrive\My stuff\DnD Characters\AppCharacters\Enphi\EnphiProfilePic.png" Grid.Column="0" Grid.Row="0"/>-->
 						<Rectangle x:Name="CharImageBorder" Stroke="MediumPurple" StrokeThickness="3" RadiusX="100" RadiusY="100"/>
 					</Grid>
 				</Grid>
 
-				<Grid x:Name="AbilityScoresContainer" Width="550" Height="115" HorizontalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="1" Grid.RowSpan="1">
+				<Grid x:Name="AbilityScoresContainer" Width="630" Height="120" HorizontalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="2" Grid.RowSpan="1">
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="10*"/>
 						<ColumnDefinition Width="*"/>
@@ -143,7 +150,7 @@
 						
 						<TextBlock Text="Strength" HorizontalAlignment="Center"/>
 						<MenuFlyoutSeparator Width="40" Margin="0 5 0 0"/>
-						<TextBlock Text="+1" FontSize="25" HorizontalAlignment="Center"/>
+						<TextBlock Text="+1" FontSize="30" HorizontalAlignment="Center"/>
 						<Grid Width="40" Padding="3" Margin="0 7 0 0" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="100">
 							<TextBlock Text="13" FontSize="15" HorizontalAlignment="Center"/>
 						</Grid>
@@ -155,7 +162,7 @@
 
 						<TextBlock Text="Dexterity" HorizontalAlignment="Center"/>
 						<MenuFlyoutSeparator Width="40" Margin="0 5 0 0"/>
-						<TextBlock Text="+2" FontSize="25" HorizontalAlignment="Center"/>
+						<TextBlock Text="+2" FontSize="30" HorizontalAlignment="Center"/>
 						<Grid Width="40" Padding="3" Margin="0 7 0 0" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="100">
 							<TextBlock Text="14" FontSize="15" HorizontalAlignment="Center"/>
 						</Grid>
@@ -167,7 +174,7 @@
 
 						<TextBlock Text="Constitution" HorizontalAlignment="Center"/>
 						<MenuFlyoutSeparator Width="40" Margin="0 5 0 0"/>
-						<TextBlock Text="+3" FontSize="25" HorizontalAlignment="Center"/>
+						<TextBlock Text="+3" FontSize="30" HorizontalAlignment="Center"/>
 						<Grid Width="40" Padding="3" Margin="0 7 0 0" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="100">
 							<TextBlock Text="16" FontSize="15" HorizontalAlignment="Center"/>
 						</Grid>
@@ -179,7 +186,7 @@
 
 						<TextBlock Text="Intelligence" HorizontalAlignment="Center"/>
 						<MenuFlyoutSeparator Width="40" Margin="0 5 0 0"/>
-						<TextBlock Text="+1" FontSize="25" HorizontalAlignment="Center"/>
+						<TextBlock Text="+1" FontSize="30" HorizontalAlignment="Center"/>
 						<Grid Width="40" Padding="3" Margin="0 7 0 0" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="100">
 							<TextBlock Text="13" FontSize="15" HorizontalAlignment="Center"/>
 						</Grid>
@@ -191,7 +198,7 @@
 
 						<TextBlock Text="Wisdom" HorizontalAlignment="Center"/>
 						<MenuFlyoutSeparator Width="40" Margin="0 5 0 0"/>
-						<TextBlock Text="+3" FontSize="25" HorizontalAlignment="Center"/>
+						<TextBlock Text="+3" FontSize="30" HorizontalAlignment="Center"/>
 						<Grid Width="40" Padding="3" Margin="0 7 0 0" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="100">
 							<TextBlock Text="16" FontSize="15" HorizontalAlignment="Center"/>
 						</Grid>
@@ -203,17 +210,17 @@
 
 						<TextBlock Text="Charisma" HorizontalAlignment="Center"/>
 						<MenuFlyoutSeparator Width="40" Margin="0 5 0 0"/>
-						<TextBlock Text="+3" FontSize="25" HorizontalAlignment="Center"/>
+						<TextBlock Text="+3" FontSize="30" HorizontalAlignment="Center"/>
 						<Grid Width="40" Padding="3" Margin="0 7 0 0" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="100">
 							<TextBlock Text="16" FontSize="15" HorizontalAlignment="Center"/>
 						</Grid>
 					</StackPanel>
 				</Grid>
 
-				<Grid x:Name="SavingThrowsContainer" Width="330" Height="220" Padding="15 5 15 0" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="2" Grid.RowSpan="1" HorizontalAlignment="Left" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="40">
+				<Grid x:Name="SavingThrowsContainer" Width="315" Height="215" Padding="10 5 10 0" Grid.Column="2" Grid.ColumnSpan="1" Grid.Row="0" Grid.RowSpan="1" HorizontalAlignment="Left" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="35">
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="*"/>
-						<ColumnDefinition Width="0.15*"/>
+						<ColumnDefinition Width="0.1*"/>
 						<ColumnDefinition Width="*"/>
 					</Grid.ColumnDefinitions>
 					<Grid.RowDefinitions>
@@ -230,40 +237,40 @@
 					<StackPanel x:Name="SavingThrowsContainerLeft" Grid.Column="0" Grid.Row="1">
 						<Grid x:Name="StrSavingThrows" Height="50" Margin="0 0 0 8" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="25">
 							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="0.4*"/>
+								<ColumnDefinition Width="0.33*"/>
 								<ColumnDefinition Width="0.3*"/>
 								<ColumnDefinition Width="0.4*"/>
 							</Grid.ColumnDefinitions>
 
 							<CheckBox Margin="10 0 0 0" Grid.Column="0" CornerRadius="10" VerticalAlignment="Center"/>
 							<TextBlock Text="STR" Grid.Column="1" VerticalAlignment="Center"/>
-							<Grid Width="35" Height="35" Margin="0 0 0 0" Grid.Column="2" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="100">
+							<Grid Width="47" Height="47" Margin="0 0 0 0" Grid.Column="2" HorizontalAlignment="Right" BorderBrush="MediumPurple" BorderThickness="2 2 0 2" CornerRadius="100">
 								<TextBlock Text="+1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 							</Grid>
 						</Grid>
 						<Grid x:Name="DexSavingThrows" Height="50" Margin="0 0 0 8" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="25">
 							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="0.4*"/>
+								<ColumnDefinition Width="0.33*"/>
 								<ColumnDefinition Width="0.3*"/>
 								<ColumnDefinition Width="0.4*"/>
 							</Grid.ColumnDefinitions>
 
 							<CheckBox Margin="10 0 0 0" Grid.Column="0" CornerRadius="10" VerticalAlignment="Center"/>
 							<TextBlock Text="DEX" Grid.Column="1" VerticalAlignment="Center"/>
-							<Grid Width="35" Height="35" Margin="0 0 0 0" Grid.Column="2" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="100">
+							<Grid Width="47" Height="47" Margin="0 0 0 0" Grid.Column="2" HorizontalAlignment="Right" BorderBrush="MediumPurple" BorderThickness="2 2 0 2" CornerRadius="100">
 								<TextBlock Text="+2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 							</Grid>
 						</Grid>
 						<Grid x:Name="ConSavingThrows" Height="50" Padding="0 0 0 0" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="25">
 							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="0.4*"/>
+								<ColumnDefinition Width="0.33*"/>
 								<ColumnDefinition Width="0.3*"/>
 								<ColumnDefinition Width="0.4*"/>
 							</Grid.ColumnDefinitions>
 
 							<CheckBox Margin="10 0 0 0" Grid.Column="0" CornerRadius="10" VerticalAlignment="Center"/>
 							<TextBlock Text="CON" Grid.Column="1" VerticalAlignment="Center"/>
-							<Grid Width="35" Height="35" Margin="0 0 0 0" Grid.Column="2" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="100">
+							<Grid Width="47" Height="47" Margin="0 0 0 0" Grid.Column="2" HorizontalAlignment="Right" BorderBrush="MediumPurple" BorderThickness="2 2 0 2" CornerRadius="100">
 								<TextBlock Text="+3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 							</Grid>
 						</Grid>
@@ -272,56 +279,56 @@
 					<StackPanel x:Name="SavingThrowsContainerRight" Grid.Column="2" Grid.Row="1">
 						<Grid x:Name="IntSavingThrows" Height="50" Margin="0 0 0 8" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="25">
 							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="0.4*"/>
+								<ColumnDefinition Width="0.33*"/>
 								<ColumnDefinition Width="0.3*"/>
 								<ColumnDefinition Width="0.4*"/>
 							</Grid.ColumnDefinitions>
 
 							<CheckBox Margin="10 0 0 0" Grid.Column="0" CornerRadius="10" VerticalAlignment="Center"/>
 							<TextBlock Text="INT" Grid.Column="1" VerticalAlignment="Center"/>
-							<Grid Width="35" Height="35" Margin="0 0 0 0" Grid.Column="2" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="100">
+							<Grid Width="47" Height="47" Margin="0 0 0 0" Grid.Column="2" HorizontalAlignment="Right" BorderBrush="MediumPurple" BorderThickness="2 2 0 2" CornerRadius="100">
 								<TextBlock Text="+3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 							</Grid>
 						</Grid>
 						<Grid x:Name="WisSavingThrows" Height="50" Margin="0 0 0 8" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="25">
 							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="0.4*"/>
+								<ColumnDefinition Width="0.33*"/>
 								<ColumnDefinition Width="0.3*"/>
 								<ColumnDefinition Width="0.4*"/>
 							</Grid.ColumnDefinitions>
 
 							<CheckBox Margin="10 0 0 0" Grid.Column="0" CornerRadius="10" VerticalAlignment="Center"/>
 							<TextBlock Text="WIS" Grid.Column="1" VerticalAlignment="Center"/>
-							<Grid Width="35" Height="35" Margin="0 0 0 0" Grid.Column="2" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="100">
+							<Grid Width="47" Height="47" Margin="0 0 0 0" Grid.Column="2" HorizontalAlignment="Right" BorderBrush="MediumPurple" BorderThickness="2 2 0 2" CornerRadius="100">
 								<TextBlock Text="+5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 							</Grid>
 						</Grid>
 						<Grid x:Name="ChaSavingThrows" Height="50" Padding="0 0 0 0" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="25">
 							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="0.4*"/>
+								<ColumnDefinition Width="0.33*"/>
 								<ColumnDefinition Width="0.3*"/>
 								<ColumnDefinition Width="0.4*"/>
 							</Grid.ColumnDefinitions>
 
 							<CheckBox Margin="10 0 0 0" Grid.Column="0" CornerRadius="10" VerticalAlignment="Center"/>
 							<TextBlock Text="CHA" Grid.Column="1" VerticalAlignment="Center"/>
-							<Grid Width="35" Height="35" Margin="0 0 0 0" Grid.Column="2" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="100">
+							<Grid Width="47" Height="47" Margin="0 0 0 0" Grid.Column="2" HorizontalAlignment="Right" BorderBrush="MediumPurple" BorderThickness="2 2 0 2" CornerRadius="100">
 								<TextBlock Text="+3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 							</Grid>
 						</Grid>
 					</StackPanel>
 				</Grid>
 
-				<Grid x:Name="SkillsContainer" Width="650" Height="390" Padding="15 5 15 0" Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="3" Grid.RowSpan="5" HorizontalAlignment="Center" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="40">
+				<Grid x:Name="SkillsContainer" Width="630" Height="390" Padding="10 5 10 0" Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="4" Grid.RowSpan="1" HorizontalAlignment="Center" VerticalAlignment="Top" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="30">
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="*"/>
-						<ColumnDefinition Width="0.08*"/>
+						<ColumnDefinition Width="10"/>
 						<ColumnDefinition Width="*"/>
-						<ColumnDefinition Width="0.08*"/>
+						<ColumnDefinition Width="10"/>
 						<ColumnDefinition Width="*"/>
 					</Grid.ColumnDefinitions>
 					<Grid.RowDefinitions>
-						<RowDefinition Height="0.07*"/>
+						<RowDefinition Height="0.08*"/>
 						<RowDefinition Height="*"/>
 					</Grid.RowDefinitions>
 
@@ -339,10 +346,10 @@
 								<ColumnDefinition Width="0.13*"/>
 							</Grid.ColumnDefinitions>
 
-							<CheckBox Margin="10 0 0 0" Grid.Column="0" CornerRadius="10" VerticalAlignment="Center"/>
+							<CheckBox MinWidth="10" MinHeight="40" Margin="10 0 0 0" Grid.Column="0" CornerRadius="10" VerticalAlignment="Center"/>
 							<TextBlock Text="Acrobatics" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-							<Grid Width="35" Height="35" Margin="0 0 0 0" Grid.Column="2" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="100">
-								<TextBlock Text="+3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<Grid Width="47" Height="47" Margin="0 0 0 0" Grid.Column="2" HorizontalAlignment="Right" BorderBrush="MediumPurple" BorderThickness="2 2 0 2" CornerRadius="100">
+								<TextBlock Text="+3" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 							</Grid>
 						</Grid>
 						<Grid x:Name="AnimalHandlingSkillContainer" Height="50" Margin="0 0 0 8" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="25">
@@ -354,8 +361,8 @@
 
 							<CheckBox Margin="10 0 0 0" Grid.Column="0" CornerRadius="10" VerticalAlignment="Center"/>
 							<TextBlock Text="Animal Handling" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-							<Grid Width="35" Height="35" Margin="0 0 0 0" Grid.Column="2" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="100">
-								<TextBlock Text="+5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<Grid Width="47" Height="47" Margin="0 0 0 0" Grid.Column="2" HorizontalAlignment="Right" BorderBrush="MediumPurple" BorderThickness="2 2 0 2" CornerRadius="100">
+								<TextBlock Text="+5" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 							</Grid>
 						</Grid>
 						<Grid x:Name="ArcanaSkillContainer" Height="50" Margin="0 0 0 8" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="25">
@@ -367,8 +374,8 @@
 
 							<CheckBox Margin="10 0 0 0" Grid.Column="0" CornerRadius="10" VerticalAlignment="Center"/>
 							<TextBlock Text="Arcana" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-							<Grid Width="35" Height="35" Margin="0 0 0 0" Grid.Column="2" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="100">
-								<TextBlock Text="+1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<Grid Width="47" Height="47" Margin="0 0 0 0" Grid.Column="2" HorizontalAlignment="Right" BorderBrush="MediumPurple" BorderThickness="2 2 0 2" CornerRadius="100">
+								<TextBlock Text="+1" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 							</Grid>
 						</Grid>
 						<Grid x:Name="AthleticsSkillContainer" Height="50" Margin="0 0 0 8" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="25">
@@ -380,8 +387,8 @@
 
 							<CheckBox Margin="10 0 0 0" Grid.Column="0" CornerRadius="10" VerticalAlignment="Center"/>
 							<TextBlock Text="Athletics" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-							<Grid Width="35" Height="35" Margin="0 0 0 0" Grid.Column="2" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="100">
-								<TextBlock Text="+1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<Grid Width="47" Height="47" Margin="0 0 0 0" Grid.Column="2" HorizontalAlignment="Right" BorderBrush="MediumPurple" BorderThickness="2 2 0 2" CornerRadius="100">
+								<TextBlock Text="+1" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 							</Grid>
 						</Grid>
 						<Grid x:Name="DeceptionSkillContainer" Height="50" Margin="0 0 0 8" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="25">
@@ -393,11 +400,11 @@
 
 							<CheckBox Margin="10 0 0 0" Grid.Column="0" CornerRadius="10" VerticalAlignment="Center"/>
 							<TextBlock Text="Deception" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-							<Grid Width="35" Height="35" Margin="0 0 0 0" Grid.Column="2" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="100">
-								<TextBlock Text="+3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<Grid Width="47" Height="47" Margin="0 0 0 0" Grid.Column="2" HorizontalAlignment="Right" BorderBrush="MediumPurple" BorderThickness="2 2 0 2" CornerRadius="100">
+								<TextBlock Text="+3" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 							</Grid>
 						</Grid>
-						<Grid x:Name="HistorySkillContainer" Height="50" Margin="0 0 0 8" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="25">
+						<Grid x:Name="HistorySkillContainer" Height="50" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="25">
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="0.1*"/>
 								<ColumnDefinition Width="0.3*"/>
@@ -406,12 +413,12 @@
 
 							<CheckBox Margin="10 0 0 0" Grid.Column="0" CornerRadius="10" VerticalAlignment="Center"/>
 							<TextBlock Text="History" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-							<Grid Width="35" Height="35" Margin="0 0 0 0" Grid.Column="2" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="100">
-								<TextBlock Text="+1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<Grid Width="47" Height="47" Margin="0 0 0 0" Grid.Column="2" HorizontalAlignment="Right" BorderBrush="MediumPurple" BorderThickness="2 2 0 2" CornerRadius="100">
+								<TextBlock Text="+1" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 							</Grid>
 						</Grid>
 					</StackPanel>
-
+					
 					<StackPanel x:Name="SkillsContainerCenter" Grid.Column="2" Grid.Row="1">
 						<Grid x:Name="InsightSkillContainer" Height="50" Margin="0 0 0 8" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="25">
 							<Grid.ColumnDefinitions>
@@ -422,8 +429,8 @@
 
 							<CheckBox Margin="10 0 0 0" Grid.Column="0" CornerRadius="10" VerticalAlignment="Center"/>
 							<TextBlock Text="Insight" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-							<Grid Width="35" Height="35" Margin="0 0 0 0" Grid.Column="2" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="100">
-								<TextBlock Text="+5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<Grid Width="47" Height="47" Margin="0 0 0 0" Grid.Column="2" HorizontalAlignment="Right" BorderBrush="MediumPurple" BorderThickness="2 2 0 2" CornerRadius="100">
+								<TextBlock Text="+5" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 							</Grid>
 						</Grid>
 						<Grid x:Name="IntimidationSkillContainer" Height="50" Margin="0 0 0 8" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="25">
@@ -435,8 +442,8 @@
 
 							<CheckBox Margin="10 0 0 0" Grid.Column="0" CornerRadius="10" VerticalAlignment="Center"/>
 							<TextBlock Text="Intimidation" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-							<Grid Width="35" Height="35" Margin="0 0 0 0" Grid.Column="2" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="100">
-								<TextBlock Text="+3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<Grid Width="47" Height="47" Margin="0 0 0 0" Grid.Column="2" HorizontalAlignment="Right" BorderBrush="MediumPurple" BorderThickness="2 2 0 2" CornerRadius="100">
+								<TextBlock Text="+3" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 							</Grid>
 						</Grid>
 						<Grid x:Name="InvestigationSkillContainer" Height="50" Margin="0 0 0 8" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="25">
@@ -448,8 +455,8 @@
 
 							<CheckBox Margin="10 0 0 0" Grid.Column="0" CornerRadius="10" VerticalAlignment="Center"/>
 							<TextBlock Text="Investigation" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-							<Grid Width="35" Height="35" Margin="0 0 0 0" Grid.Column="2" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="100">
-								<TextBlock Text="+1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<Grid Width="47" Height="47" Margin="0 0 0 0" Grid.Column="2" HorizontalAlignment="Right" BorderBrush="MediumPurple" BorderThickness="2 2 0 2" CornerRadius="100">
+								<TextBlock Text="+1" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 							</Grid>
 						</Grid>
 						<Grid x:Name="MedicineSkillContainer" Height="50" Margin="0 0 0 8" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="25">
@@ -461,8 +468,8 @@
 
 							<CheckBox Margin="10 0 0 0" Grid.Column="0" CornerRadius="10" VerticalAlignment="Center"/>
 							<TextBlock Text="Medicine" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-							<Grid Width="35" Height="35" Margin="0 0 0 0" Grid.Column="2" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="100">
-								<TextBlock Text="+3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<Grid Width="47" Height="47" Margin="0 0 0 0" Grid.Column="2" HorizontalAlignment="Right" BorderBrush="MediumPurple" BorderThickness="2 2 0 2" CornerRadius="100">
+								<TextBlock Text="+3" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 							</Grid>
 						</Grid>
 						<Grid x:Name="NatureSkillContainer" Height="50" Margin="0 0 0 8" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="25">
@@ -474,11 +481,11 @@
 
 							<CheckBox Margin="10 0 0 0" Grid.Column="0" CornerRadius="10" VerticalAlignment="Center"/>
 							<TextBlock Text="Nature" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-							<Grid Width="35" Height="35" Margin="0 0 0 0" Grid.Column="2" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="100">
-								<TextBlock Text="+3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<Grid Width="47" Height="47" Margin="0 0 0 0" Grid.Column="2" HorizontalAlignment="Right" BorderBrush="MediumPurple" BorderThickness="2 2 0 2" CornerRadius="100">
+								<TextBlock Text="+3" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 							</Grid>
 						</Grid>
-						<Grid x:Name="PerceptionSkillContainer" Height="50" Margin="0 0 0 8" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="25">
+						<Grid x:Name="PerceptionSkillContainer" Height="50" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="25">
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="0.1*"/>
 								<ColumnDefinition Width="0.3*"/>
@@ -487,8 +494,8 @@
 
 							<CheckBox Margin="10 0 0 0" Grid.Column="0" CornerRadius="10" VerticalAlignment="Center"/>
 							<TextBlock Text="Perception" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-							<Grid Width="35" Height="35" Margin="0 0 0 0" Grid.Column="2" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="100">
-								<TextBlock Text="+3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<Grid Width="47" Height="47" Margin="0 0 0 0" Grid.Column="2" HorizontalAlignment="Right" BorderBrush="MediumPurple" BorderThickness="2 2 0 2" CornerRadius="100">
+								<TextBlock Text="+3" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 							</Grid>
 						</Grid>
 					</StackPanel>
@@ -503,8 +510,8 @@
 
 							<CheckBox Margin="10 0 0 0" Grid.Column="0" CornerRadius="10" VerticalAlignment="Center"/>
 							<TextBlock Text="Performance" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-							<Grid Width="35" Height="35" Margin="0 0 0 0" Grid.Column="2" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="100">
-								<TextBlock Text="+3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<Grid Width="47" Height="47" Margin="0 0 0 0" Grid.Column="2" HorizontalAlignment="Right" BorderBrush="MediumPurple" BorderThickness="2 2 0 2" CornerRadius="100">
+								<TextBlock Text="+3" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 							</Grid>
 						</Grid>
 						<Grid x:Name="PersuasionSkillContainer" Height="50" Margin="0 0 0 8" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="25">
@@ -516,8 +523,8 @@
 
 							<CheckBox Margin="10 0 0 0" Grid.Column="0" CornerRadius="10" VerticalAlignment="Center"/>
 							<TextBlock Text="Persuasion" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-							<Grid Width="35" Height="35" Margin="0 0 0 0" Grid.Column="2" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="100">
-								<TextBlock Text="+3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<Grid Width="47" Height="47" Margin="0 0 0 0" Grid.Column="2" HorizontalAlignment="Right" BorderBrush="MediumPurple" BorderThickness="2 2 0 2" CornerRadius="100">
+								<TextBlock Text="+3" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 							</Grid>
 						</Grid>
 						<Grid x:Name="ReligionSkillContainer" Height="50" Margin="0 0 0 8" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="25">
@@ -529,8 +536,8 @@
 
 							<CheckBox Margin="10 0 0 0" Grid.Column="0" CornerRadius="10" VerticalAlignment="Center"/>
 							<TextBlock Text="Religion" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-							<Grid Width="35" Height="35" Margin="0 0 0 0" Grid.Column="2" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="100">
-								<TextBlock Text="+3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<Grid Width="47" Height="47" Margin="0 0 0 0" Grid.Column="2" HorizontalAlignment="Right" BorderBrush="MediumPurple" BorderThickness="2 2 0 2" CornerRadius="100">
+								<TextBlock Text="+3" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 							</Grid>
 						</Grid>
 						<Grid x:Name="SleightOfHandSkillContainer" Height="50" Margin="0 0 0 8" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="25">
@@ -542,8 +549,8 @@
 
 							<CheckBox Margin="10 0 0 0" Grid.Column="0" CornerRadius="10" VerticalAlignment="Center"/>
 							<TextBlock Text="Sleight of Hand" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-							<Grid Width="35" Height="35" Margin="0 0 0 0" Grid.Column="2" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="100">
-								<TextBlock Text="+2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<Grid Width="47" Height="47" Margin="0 0 0 0" Grid.Column="2" HorizontalAlignment="Right" BorderBrush="MediumPurple" BorderThickness="2 2 0 2" CornerRadius="100">
+								<TextBlock Text="+2" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 							</Grid>
 						</Grid>
 						<Grid x:Name="StealthSkillContainer" Height="50" Margin="0 0 0 8" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="25">
@@ -555,11 +562,11 @@
 
 							<CheckBox Margin="10 0 0 0" Grid.Column="0" CornerRadius="10" VerticalAlignment="Center"/>
 							<TextBlock Text="Stealth" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-							<Grid Width="35" Height="35" Margin="0 0 0 0" Grid.Column="2" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="100">
-								<TextBlock Text="+2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<Grid Width="47" Height="47" Margin="0 0 0 0" Grid.Column="2" HorizontalAlignment="Right" BorderBrush="MediumPurple" BorderThickness="2 2 0 2" CornerRadius="100">
+								<TextBlock Text="+2" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 							</Grid>
 						</Grid>
-						<Grid x:Name="SurvivalSkillContainer" Height="50" Margin="0 0 0 8" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="25">
+						<Grid x:Name="SurvivalSkillContainer" Height="50" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="25">
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="0.1*"/>
 								<ColumnDefinition Width="0.3*"/>
@@ -568,14 +575,14 @@
 
 							<CheckBox Margin="10 0 0 0" Grid.Column="0" CornerRadius="10" VerticalAlignment="Center"/>
 							<TextBlock Text="Survival" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-							<Grid Width="35" Height="35" Margin="0 0 0 0" Grid.Column="2" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="100">
-								<TextBlock Text="+3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<Grid Width="47" Height="47" Margin="0 0 0 0" Grid.Column="2" HorizontalAlignment="Right" BorderBrush="MediumPurple" BorderThickness="2 2 0 2" CornerRadius="100">
+								<TextBlock Text="+3" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 							</Grid>
 						</Grid>
 					</StackPanel>
 				</Grid>
 
-				<StackPanel x:Name="VitalsInfoContainer" Width="260" Height="600" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0" Grid.RowSpan="3">
+				<StackPanel x:Name="VitalsInfoContainer" Width="260" Height="600" HorizontalAlignment="Left" Grid.Column="2" Grid.Row="4" Grid.RowSpan="1">
 					<StackPanel x:Name="ArmourInitiativeSpeedContainer" Orientation="Horizontal" Margin="0 0 0 10">
 						<StackPanel x:Name="ArmourContainer" Width="80" Height="90" Margin="0 0 10 0" Padding="10 10 10 0" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="15">
 							<StackPanel.Background>
@@ -620,39 +627,99 @@
 							<TextBlock Text="--" FontSize="30" HorizontalAlignment="Center"/>
 						</StackPanel>
 					</StackPanel>
-					<StackPanel x:Name="HitDiceDeathSaveContainer" Orientation="Horizontal">
+					<StackPanel x:Name="HitDiceDeathSaveContainer" Orientation="Horizontal" HorizontalAlignment="Center">
 
-						<StackPanel x:Name="HitDiceContainer" Width="100" Margin="0 0 5 0" Padding="10" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="15">
+						<StackPanel x:Name="HitDiceContainer" Width="100" Margin="0 0 5 0" Padding="5" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="15">
 							<StackPanel.Background>
 								<SolidColorBrush Color="Black" Opacity="0.4"/>
 							</StackPanel.Background>
 
 							<TextBlock Text="Hit Dice" Margin="0 0 0 3" HorizontalAlignment="Center"/>
-							<TextBlock Text="Current: 3" FontSize="17" HorizontalAlignment="Center"/>
-							<TextBlock Text="Max: 3" FontSize="15" HorizontalAlignment="Center"/>
+							<TextBlock Text="Current" FontSize="13" HorizontalAlignment="Center"/>
+							<TextBlock Text="3" FontSize="17" HorizontalAlignment="Center"/>
+							<TextBlock Text="Max" FontSize="13" HorizontalAlignment="Center"/>
+							<TextBlock Text="3" FontSize="15" HorizontalAlignment="Center"/>
 						</StackPanel>
-						<StackPanel x:Name="DeathSaveContainer" Width="120" Margin="5 0 0 0" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="15">
+						<StackPanel x:Name="DeathSaveContainer" Width="100" Margin="5 0 0 0" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="15">
 							<StackPanel.Background>
 								<SolidColorBrush Color="Black" Opacity="0.4"/>
 							</StackPanel.Background>
 
 							<TextBlock Text="Death Saves" HorizontalAlignment="Center"/>
 
-							<StackPanel x:Name="SuccessesContainer" Orientation="Horizontal">
-								<TextBlock Text="Successes" VerticalAlignment="Center"/>
-								<ToggleButton Width="10" Height="10" BorderBrush="Lavender" CornerRadius="100"/>
-								<ToggleButton Width="10" Height="10" BorderBrush="Lavender" CornerRadius="100"/>
-								<ToggleButton Width="10" Height="10" BorderBrush="Lavender" CornerRadius="100"/>
+							<TextBlock Text="Successes" FontSize="13" HorizontalAlignment="Center"/>
+							<StackPanel x:Name="SuccessesContainer" Orientation="Horizontal" HorizontalAlignment="Center">
+								<ToggleButton Width="24" Height="24" Margin="0 0 5 0" BorderBrush="Lavender" CornerRadius="100"/>
+								<ToggleButton Width="24" Height="24" Margin="0 0 5 0" BorderBrush="Lavender" CornerRadius="100"/>
+								<ToggleButton Width="24" Height="24" Margin="0 0 5 0" BorderBrush="Lavender" CornerRadius="100"/>
 							</StackPanel>
-							<StackPanel x:Name="FailuresContainer" Orientation="Horizontal">
-								<TextBlock Text="Failures" VerticalAlignment="Center"/>
-								<CheckBox CornerRadius="10"/>
-								<CheckBox CornerRadius="10"/>
-								<CheckBox CornerRadius="10"/>
+
+							<TextBlock Text="Failures" FontSize="13" HorizontalAlignment="Center"/>
+							<StackPanel x:Name="FailuresContainer" Orientation="Horizontal" Margin="8 0 0 0" HorizontalAlignment="Center">
+								<CheckBox MinWidth="25" Margin="0 0 0 0" CornerRadius="10"/>
+								<CheckBox MinWidth="25" Margin="0 0 0 0" CornerRadius="10"/>
+								<CheckBox MinWidth="25" Margin="0 0 0 0" CornerRadius="10"/>
 							</StackPanel>
 						</StackPanel>
 					</StackPanel>
 				</StackPanel>
+
+				<StackPanel x:Name="InventoryContainer" Width="450" Height="300" Grid.Column="4" Grid.Row="4" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="30">
+					<StackPanel.Background>
+						<SolidColorBrush Color="Black" Opacity="0.4"/>
+					</StackPanel.Background>
+
+					<SelectorBar x:Name="InventoryBar" SelectionChanged="InventoryBar_SelectionChanged" HorizontalAlignment="Center">
+						<SelectorBarItem x:Name="ActionsItem" Text="Actions" IsSelected="True"/>
+						<SelectorBarItem x:Name="SpellsItem" Text="Spells"/>
+						<SelectorBarItem x:Name="InventoryItem" Text="Inventory"/>
+					</SelectorBar>
+
+					<!--Do inventory stuff programatically from scratch-->
+					<StackPanel x:Name="ItemsContainer">
+						<TextBlock Text="beans"/>
+					</StackPanel>
+					
+					<StackPanel x:Name="ItemsListContainer">
+						<ScrollView x:Name="ActionsItemScroll" Visibility="Collapsed">
+							<ScrollView.Transitions>
+								<TransitionCollection>
+									<EntranceThemeTransition/>
+								</TransitionCollection>
+							</ScrollView.Transitions>
+							
+							<StackPanel>
+								<TextBlock Text="Scimitar"/>
+								<TextBlock Text="Hammer"/>
+							</StackPanel>
+						</ScrollView>
+						<ScrollView x:Name="SpellsItemScroll" Visibility="Collapsed">
+							<ScrollView.Transitions>
+								<TransitionCollection>
+									<EntranceThemeTransition/>
+								</TransitionCollection>
+							</ScrollView.Transitions>
+
+							<StackPanel>
+								<TextBlock Text="Poison Spray"/>
+								<TextBlock Text="Produce Flame"/>
+							</StackPanel>
+						</ScrollView>
+						<ScrollView x:Name="InventoryItemScroll" Visibility="Collapsed">
+							<ScrollView.Transitions>
+								<TransitionCollection>
+									<EntranceThemeTransition/>
+								</TransitionCollection>
+							</ScrollView.Transitions>
+
+							<StackPanel>
+								<TextBlock Text="Rope"/>
+								<TextBlock Text="PS5"/>
+							</StackPanel>
+						</ScrollView>
+					</StackPanel>
+				</StackPanel>
+
 			</Grid>
 		</NavigationView>
 	</Grid>
