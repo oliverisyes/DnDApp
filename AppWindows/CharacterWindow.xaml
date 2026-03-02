@@ -14,7 +14,7 @@
 	</Window.SystemBackdrop>
 
 	<Grid>
-		<NavigationView x:Name="navview" >
+		<NavigationView x:Name="navview" PaneDisplayMode="LeftMinimal">
 			
 		</NavigationView>
 	</Grid>

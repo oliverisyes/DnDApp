@@ -7,16 +7,18 @@ using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
-using Microsoft.UI.Xaml.Shapes;
+//using Microsoft.UI.Xaml.Shapes;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Text.Json;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using static DnDApp.JSONTools.JSONTools;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -36,6 +38,9 @@ namespace DnDApp
         /// </summary>
         public App()
         {
+            AppSettings settings = new AppSettings();
+            settings.LoadAppSettings(Path.GetFullPath(@"C:\Projects\ProgrammingProjects\DnDApp\bin\Debug\AppSettings.json"));
+
             InitializeComponent();
         }
 
@@ -46,24 +51,9 @@ namespace DnDApp
         protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
         {
             _window = new SelectCharacterWindow();
-
-            // Create a Frame to act as the navigation context and navigate to the first page
-             //Frame rootFrame = new Frame();
-			// Navigate to the first page, configuring the new page
-			// by passing required information as a navigation parameter
-			 //rootFrame.Navigate(typeof(SelectCharacterPage), args.Arguments);
-            // Place the frame in the current Window
-             //_window.Content = rootFrame;
-			 _window.ExtendsContentIntoTitleBar = true;
+			_window.ExtendsContentIntoTitleBar = true;
 			_window.AppWindow.MoveAndResize(new Windows.Graphics.RectInt32(600, 200, 800, 600));
-			// Ensure the MainWindow is active
 			_window.Activate();
-			//_window.Title = "DndYay";
-			//_window.ExtendsContentIntoTitleBar = true;
-			//_window.SetTitleBar(CreateTitlebar());
-			
 		}
-
-        
-    }
+	}
 }

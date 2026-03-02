@@ -21,7 +21,8 @@
 		<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="500">
 			<Grid Width="500" Margin="0 0 0 10">
 				<Grid.ColumnDefinitions>
-					<ColumnDefinition Width="243"/>
+					<ColumnDefinition Width="200"/>
+					<ColumnDefinition Width="auto"/>
 					<ColumnDefinition Width="auto"/>
 					<ColumnDefinition Width="auto"/>
 				</Grid.ColumnDefinitions>
@@ -29,6 +30,9 @@
 				<AutoSuggestBox PlaceholderText="Enter character name" QueryIcon="Find" Grid.Column="0"/>
 				<Button Content="New Character" Click="CharButton_Click" Grid.Column="1" Margin="10 0 10 0"/>
 				<Button Content="Open Character" Grid.Column="2"/>
+				<Button Width="35" Height="35" Grid.Column="3" Padding="0" Margin="7 0 0 0" CornerRadius="100">
+					<FontIcon Glyph="&#xE713;"/>
+				</Button>
 			</Grid>
 
 			<!--<Line Stroke="DimGray" X1="0" Y1="0" X2="200" Y2="0" StrokeThickness="1" Margin="10"/>-->

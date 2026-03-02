@@ -52,10 +52,10 @@ namespace DnDApp.AppWindows
 			int currentSelectedIndex = sender.Items.IndexOf(selectedItem);
 
 			//ItemsContainer.Children.Clear();
-			ItemsContainer.Children.Add(ActionsItemScroll);
+			//  ItemsContainer.Children.Add(ActionsItemScroll);
 
 			//ItemsContainer.Children[previousSelectedIndex].Visibility = Visibility.Collapsed;
-			ItemsContainer.Children[currentSelectedIndex].Visibility = Visibility.Visible;
+			//  ItemsContainer.Children[currentSelectedIndex].Visibility = Visibility.Visible;
 
 			//previousSelectedIndex = currentSelectedIndex;
 		}
