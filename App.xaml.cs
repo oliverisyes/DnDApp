@@ -40,7 +40,7 @@ namespace DnDApp
         public App()
         {
 			AppSettings settings = new AppSettings();
-            settings.LoadAppSettings(Path.GetFullPath(@"C:\Projects\DnDApp\bin\Debug\AppSettings.json"));
+            settings.LoadAppSettings(Path.GetFullPath(@"C:\Projects\ProgrammingProjects\DnDApp\bin\Debug\AppSettings.json"));
 
             InitializeComponent();
         }

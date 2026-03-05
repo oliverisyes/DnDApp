@@ -30,7 +30,7 @@
 				<AutoSuggestBox PlaceholderText="Enter character name" QueryIcon="Find" Grid.Column="0"/>
 				<Button Content="New Character" Click="CharButton_Click" Grid.Column="1" Margin="10 0 10 0"/>
 				<Button Content="Open Character" Grid.Column="2"/>
-				<Button Click="SettingsButton_Click" Width="35" Height="35" Grid.Column="3" Padding="0" Margin="7 0 0 0" CornerRadius="100">
+				<Button Click="SettingsButton_Click" Background="Transparent" BorderBrush="Transparent" Width="35" Height="35" Grid.Column="3" Padding="0" Margin="7 0 0 0" CornerRadius="100">
 					<FontIcon Glyph="&#xE713;"/>
 				</Button>
 			</Grid>
@@ -44,15 +44,93 @@
 			</ScrollView>
 		</StackPanel>
 
-		<Popup x:Name="StandardPopup" HorizontalAlignment="Center" VerticalAlignment="Center" IsLightDismissEnabled="False">
-			<Border Padding="20" CornerRadius="{StaticResource OverlayCornerRadius}" Width="500" Height="500" BorderThickness="1" BorderBrush="{ThemeResource SurfaceStrokeColorDefaultBrush}"
-                Background="{ThemeResource AcrylicBackgroundFillColorDefaultBrush}">
-				<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="8">
-					<TextBlock Text="Simple Popup" FontSize="16" HorizontalAlignment="Center" />
-					<Button Content="Close" Click="ClosePopupClicked" />
-				</StackPanel>
+		<Popup x:Name="StandardPopup" Margin="0 0 650 500" HorizontalAlignment="Center" VerticalAlignment="Center" LightDismissOverlayMode="Off"  IsLightDismissEnabled="False">
+			<Border Padding="0" CornerRadius="{StaticResource OverlayCornerRadius}" Width="650" Height="500"
+					BorderThickness="1" BorderBrush="{ThemeResource SurfaceStrokeColorDefaultBrush}"
+					Background="{ThemeResource AcrylicBackgroundFillColorDefaultBrush}">
+				<Grid Width="650" Height="500" Padding="12" HorizontalAlignment="Center" VerticalAlignment="Center">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="auto"/>
+						<ColumnDefinition Width="*"/>
+					</Grid.ColumnDefinitions>
+
+					<StackPanel Width="170" Grid.Column="0" Spacing="5" BorderBrush="{ThemeResource SurfaceStrokeColorDefaultBrush}" BorderThickness="0 0 1 0" HorizontalAlignment="Left">
+						<TextBlock Text="Settings" Style="{StaticResource BodyLargeTextBlockStyle}" Margin="10 0 0 5"/>
+						<Button Content="Appearance" HorizontalContentAlignment="Left" Width="150"/>
+						<Button Content="Manage Characters" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Transparent" Width="150"/>
+						<Button Content="About" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Transparent" Width="150"/>
+					</StackPanel>
+
+					<Grid Grid.Column="1" VerticalAlignment="Top">
+						<Button Click="ClosePopupClicked" Background="Transparent" BorderBrush="Transparent" Padding="3" Width="auto" Height="auto" HorizontalAlignment="Right">
+							<SymbolIcon Symbol="Cancel" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+						</Button>
+					</Grid>
+
+					<StackPanel Spacing="10" Margin="0 30 0 0" Grid.Column="1" HorizontalAlignment="Center">
+						<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
+							<TextBlock Text="Theme:" FontSize="15" Padding="0 0 0 3" VerticalAlignment="Center"/>
+							<ComboBox Width="100">
+								<x:String>System</x:String>
+								<x:String>Dark</x:String>
+								<x:String>Light</x:String>
+							</ComboBox>
+						</StackPanel>
+						<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
+							<TextBlock Text="Accent Colour:" FontSize="15" Padding="0 0 0 3" VerticalAlignment="Center"/>
+
+							<Button Width="30" Height="30"
+								BorderBrush="{ThemeResource SurfaceStrokeColorDefaultBrush}" BorderThickness="1" 
+								CornerRadius="100" >
+								<!--<SymbolIcon Symbol="Edit"/>-->
+								<Button.Background>
+									<SolidColorBrush Color="{x:Bind ColorPicker.Color, Mode=OneWay}"/>
+								</Button.Background>
+								<Button.Flyout>
+									<Flyout>
+										<StackPanel>
+											<Viewbox Width="400">
+												<ColorPicker x:Name="ColorPicker" Orientation="Horizontal"
+													IsColorPreviewVisible="True"
+													ColorSpectrumShape="Box"
+													IsMoreButtonVisible="False"
+													IsColorSliderVisible="True"
+													IsColorChannelTextInputVisible="False"
+													IsHexInputVisible="True"
+													IsAlphaEnabled="False"
+													IsAlphaSliderVisible="False"
+													IsAlphaTextInputVisible="False">
+												</ColorPicker>
+											</Viewbox>
+											<StackPanel Orientation="Horizontal">
+												<Button Content="Confirm"/>
+											</StackPanel>
+										</StackPanel>
+									</Flyout>
+								</Button.Flyout>
+							</Button>
+						</StackPanel>
+
+						<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
+							<TextBlock Text="Style:" FontSize="15" Padding="0 0 0 3" VerticalAlignment="Center"/>
+							<ComboBox Width="100">
+								<x:String>Windows 11</x:String>
+								<x:String>Bold</x:String>
+								<x:String>Windows XP</x:String>
+							</ComboBox>
+						</StackPanel>
+
+						<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
+							<TextBlock Text="Font:" FontSize="15" Padding="0 0 0 3" VerticalAlignment="Center"/>
+							<ComboBox Width="100">
+								<x:String>Windows 11</x:String>
+								<x:String>Bold</x:String>
+								<x:String>Windows XP</x:String>
+							</ComboBox>
+						</StackPanel>
+					</StackPanel>
+				</Grid>
 			</Border>
 		</Popup>
-
 	</Grid>
 </Window>
