@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text.Json;
 using Windows.ApplicationModel;
@@ -38,8 +39,8 @@ namespace DnDApp
         /// </summary>
         public App()
         {
-            AppSettings settings = new AppSettings();
-            settings.LoadAppSettings(Path.GetFullPath(@"C:\Projects\ProgrammingProjects\DnDApp\bin\Debug\AppSettings.json"));
+			AppSettings settings = new AppSettings();
+            settings.LoadAppSettings(Path.GetFullPath(@"C:\Projects\DnDApp\bin\Debug\AppSettings.json"));
 
             InitializeComponent();
         }

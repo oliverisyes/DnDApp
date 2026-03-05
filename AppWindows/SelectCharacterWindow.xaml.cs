@@ -115,5 +115,15 @@ namespace DnDApp.AppWindows
         {
 			Character.NewCharWindow();
         }
-    }
+
+		private void SettingsButton_Click(object sender, RoutedEventArgs e)
+		{
+			if (!StandardPopup.IsOpen) { StandardPopup.IsOpen = true; }
+		}
+		private void ClosePopupClicked(object sender, RoutedEventArgs e)
+		{
+			// if the Popup is open, then close it
+			if (StandardPopup.IsOpen) { StandardPopup.IsOpen = false; }
+		}
+	}
 }
