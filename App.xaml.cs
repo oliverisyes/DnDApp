@@ -38,11 +38,8 @@ namespace DnDApp
         /// executed, and as such is the logical equivalent of main() or WinMain().
         /// </summary>
         public App()
-        {
-			AppSettings settings = new AppSettings();
-            settings.LoadAppSettings(Path.GetFullPath(@"C:\Projects\ProgrammingProjects\DnDApp\bin\Debug\AppSettings.json"));
-
-            InitializeComponent();
+        { 
+			InitializeComponent();
         }
 
         /// <summary>
@@ -51,7 +48,14 @@ namespace DnDApp
         /// <param name="args">Details about the launch request and process.</param>
         protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
         {
-            _window = new SelectCharacterWindow();
+			AppPreferences settings = new AppPreferences();
+			//settings.LoadAppSettings(Path.GetFullPath(@"C:\Projects\ProgrammingProjects\DnDApp\bin\Debug\AppSettings.json"));
+			settings.LoadAppPreferences(Path.GetFullPath(@"C:\Projects\DnDApp\bin\Debug\AppSettings.json"));
+
+			//var primaryColor = (Windows.UI.Color)Application.Current.Resources["PrimaryColor"];
+			//Application.Current.Resources["AccentColor"] = settings.AccentColour;
+
+			_window = new SelectCharacterWindow();
 			_window.ExtendsContentIntoTitleBar = true;
 			_window.AppWindow.MoveAndResize(new Windows.Graphics.RectInt32(600, 200, 800, 600));
 			_window.Activate();

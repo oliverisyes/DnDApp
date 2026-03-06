@@ -28,7 +28,7 @@
 				</Grid.ColumnDefinitions>
 
 				<AutoSuggestBox PlaceholderText="Enter character name" QueryIcon="Find" Grid.Column="0"/>
-				<Button Content="New Character" Click="CharButton_Click" Grid.Column="1" Margin="10 0 10 0"/>
+				<Button Content="New Character" Click="CharButton_Click" Grid.Column="1" Margin="10 0 10 0" Background="{StaticResource AccentColor}"/>
 				<Button Content="Open Character" Grid.Column="2"/>
 				<Button Click="SettingsButton_Click" Background="Transparent" BorderBrush="Transparent" Width="35" Height="35" Grid.Column="3" Padding="0" Margin="7 0 0 0" CornerRadius="100">
 					<FontIcon Glyph="&#xE713;"/>
@@ -44,11 +44,12 @@
 			</ScrollView>
 		</StackPanel>
 
-		<Popup x:Name="StandardPopup" Margin="0 0 650 500" HorizontalAlignment="Center" VerticalAlignment="Center" LightDismissOverlayMode="Off"  IsLightDismissEnabled="False">
-			<Border Padding="0" CornerRadius="{StaticResource OverlayCornerRadius}" Width="650" Height="500"
+		<Popup x:Name="StandardPopup" Margin="0 0 550 400" HorizontalAlignment="Center" VerticalAlignment="Center" LightDismissOverlayMode="Off"  IsLightDismissEnabled="False">
+			<Border Padding="0" CornerRadius="{StaticResource OverlayCornerRadius}" Width="550" Height="400"
 					BorderThickness="1" BorderBrush="{ThemeResource SurfaceStrokeColorDefaultBrush}"
 					Background="{ThemeResource AcrylicBackgroundFillColorDefaultBrush}">
-				<Grid Width="650" Height="500" Padding="12" HorizontalAlignment="Center" VerticalAlignment="Center">
+				<Grid Width="550" Height="400" Padding="12" HorizontalAlignment="Center" VerticalAlignment="Center">
+					<!--Width="650" Height="500"-->
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="auto"/>
 						<ColumnDefinition Width="*"/>
@@ -89,14 +90,14 @@
 								<Button.Flyout>
 									<Flyout>
 										<StackPanel>
-											<Viewbox Width="400">
+											<Viewbox Width="200">
 												<ColorPicker x:Name="ColorPicker" Orientation="Horizontal"
-													IsColorPreviewVisible="True"
+													IsColorPreviewVisible="False"
 													ColorSpectrumShape="Box"
 													IsMoreButtonVisible="False"
 													IsColorSliderVisible="True"
 													IsColorChannelTextInputVisible="False"
-													IsHexInputVisible="True"
+													IsHexInputVisible="False"
 													IsAlphaEnabled="False"
 													IsAlphaSliderVisible="False"
 													IsAlphaTextInputVisible="False">

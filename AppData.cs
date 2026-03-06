@@ -8,6 +8,6 @@ namespace DnDApp
 {
 	public class AppData
 	{
-		public AppSettings Settings;
+		public AppPreferences Preferences;
 	}
 }

@@ -7,27 +7,29 @@ using static DnDApp.JSONTools.JSONTools;
 
 namespace DnDApp
 {
-	public class AppSettings
+	public class AppPreferences
 	{
 		public string[]? CharacterPaths { get; set; }
 		public string Theme { get; set; }
 		public string AccentColour { get; set; }
+		public string Font { get; set; }
 
-		public AppSettings() 
+		public AppPreferences() 
 		{
 			CharacterPaths = null;
 			Theme = "Dark";
 			AccentColour = "#4e2685";
+			Font = "";
 		}
 
-		public void LoadAppSettings(string path)
+		public void LoadAppPreferences(string path)
 		{
 			string fileName = Path.GetFileName(path);
 
 			if (File.Exists(path))
 			{
 				string jsonString = File.ReadAllText(path);
-				var tempSetting = JsonSerializer.Deserialize<AppSettings>(jsonString);
+				var tempSetting = JsonSerializer.Deserialize<AppPreferences>(jsonString);
 				if (tempSetting != null)
 				{
 					CharacterPaths = tempSetting.CharacterPaths;
