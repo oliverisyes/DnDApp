@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DnDApp.CharacterClasses
+﻿namespace DnDApp.CharacterClasses
 {
-    internal class Spell
-    {
-    }
+	internal class Spell
+	{
+	}
 }

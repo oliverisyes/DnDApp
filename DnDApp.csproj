@@ -14,10 +14,18 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="AppWindows\CharacterWindow\**" />
+    <Compile Remove="AppWindows\NewCharacterWindow\**" />
+    <EmbeddedResource Remove="AppWindows\CharacterWindow\**" />
+    <EmbeddedResource Remove="AppWindows\NewCharacterWindow\**" />
+    <None Remove="AppWindows\CharacterWindow\**" />
+    <None Remove="AppWindows\NewCharacterWindow\**" />
+    <Page Remove="AppWindows\CharacterWindow\**" />
+    <Page Remove="AppWindows\NewCharacterWindow\**" />
+  </ItemGroup>
+  <ItemGroup>
     <None Remove="AppPages\CharacterPage.xaml" />
-    <None Remove="AppWindows\CharacterWindow.xaml" />
-    <None Remove="AppWindows\NewCharacterWindow.xaml" />
-    <None Remove="AppWindows\SelectCharacterWindow.xaml" />
+    <None Remove="AppWindows\SelectCharacterWindow\SelectCharacterPage.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -66,6 +74,11 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
+  <ItemGroup>
+    <Page Update="AppWindows\SelectCharacterWindow\SelectCharacterPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <WebView2UseWinRT>False</WebView2UseWinRT>
   </PropertyGroup>
@@ -95,4 +108,10 @@
     <AppxBundle>Never</AppxBundle>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
   </PropertyGroup>
+  <ItemGroup>
+    <PRIResource Remove="AppWindows\NewCharacterWindow\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Remove="AppWindows\CharacterWindow\**" />
+  </ItemGroup>
 </Project>

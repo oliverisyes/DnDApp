@@ -1,9 +1,5 @@
-﻿using System;
-using System.ComponentModel;
-using System.IO;
-using System.Reflection;
+﻿using System.IO;
 using System.Text.Json;
-using static DnDApp.JSONTools.JSONTools;
 
 namespace DnDApp
 {
@@ -11,14 +7,14 @@ namespace DnDApp
 	{
 		public string[]? CharacterPaths { get; set; }
 		public string Theme { get; set; }
-		public string AccentColour { get; set; }
+		public string AccentColor { get; set; }
 		public string Font { get; set; }
 
-		public AppPreferences() 
+		public AppPreferences()
 		{
 			CharacterPaths = null;
-			Theme = "Dark";
-			AccentColour = "#4e2685";
+			Theme = "System";
+			AccentColor = "System";
 			Font = "";
 		}
 
@@ -34,7 +30,7 @@ namespace DnDApp
 				{
 					CharacterPaths = tempSetting.CharacterPaths;
 					Theme = tempSetting.Theme;
-					AccentColour = tempSetting.AccentColour;
+					AccentColor = tempSetting.AccentColor;
 				}
 			}
 			else

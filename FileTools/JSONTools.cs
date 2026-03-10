@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
-namespace DnDApp.JSONTools
+namespace DnDApp.FileTools
 {
 	internal class JSONTools
 	{

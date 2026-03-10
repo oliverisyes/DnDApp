@@ -1,7 +1,4 @@
-﻿using System;
-using System.IO;
-
-namespace DnDApp.FileTools
+﻿namespace DnDApp.FileTools
 {
 	internal class DirTools
 	{
