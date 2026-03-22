@@ -3,16 +3,10 @@
     x:Class="DnDApp.AppWindows.SelectCharacterPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:DnDApp.AppWindows"
+	xmlns:controls="using:DnDApp.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
-	<Page.Resources>
-		<ControlTemplate x:Key="aaaa">
-			
-		</ControlTemplate>
-	</Page.Resources>
 
 	<Grid>
 		<Grid>
@@ -29,8 +23,8 @@
 				</Grid.ColumnDefinitions>
 
 				<AutoSuggestBox PlaceholderText="Enter character name" QueryIcon="Find" Grid.Column="0"/>
-				<Button Content="New Character" Click="NewCharButton_Click" Style="{ThemeResource HighlightButton}" Grid.Column="1" Margin="10 0 10 0"/>
-				<Button Content="Open Character" Grid.Column="2"/>
+				<Button Content="New Character" Click="NewCharButton_Click" Style="{ThemeResource AccentButtonStyle}" Grid.Column="1" Margin="10 0 10 0"/>
+				<Button Content="Open Character" Style="{ThemeResource AccentButtonStyle}" Grid.Column="2"/>
 				<Button Click="SettingsButton_Click" Background="Transparent" BorderBrush="Transparent" Width="35" Height="35" Grid.Column="3" Padding="0" Margin="7 0 0 0" CornerRadius="100">
 					<SymbolIcon Symbol="Setting"/>
 				</Button>
@@ -38,106 +32,20 @@
 
 			<!--<Line Stroke="DimGray" X1="0" Y1="0" X2="200" Y2="0" StrokeThickness="1" Margin="10"/>-->
 
-			<ScrollView>
+			<ItemsStackPanel>
+				
+			</ItemsStackPanel>
+			
+			<ScrollView Height="300">
 				<StackPanel x:Name="charPanel" Spacing="5">
-
+					<controls:CharacterSelectButton/>
+					<controls:CharacterSelectButton/>
+					<controls:CharacterSelectButton/>
+					<controls:CharacterSelectButton/>
 				</StackPanel>
 			</ScrollView>
 		</StackPanel>
 
-		<Popup x:Name="StandardPopup" Margin="0 0 550 400" HorizontalAlignment="Center" VerticalAlignment="Center" LightDismissOverlayMode="Off"  IsLightDismissEnabled="False">
-			<Border Padding="0" CornerRadius="{StaticResource OverlayCornerRadius}" Width="550" Height="400"
-	BorderThickness="1" BorderBrush="{ThemeResource SurfaceStrokeColorDefaultBrush}"
-	Background="{ThemeResource AcrylicBackgroundFillColorDefaultBrush}">
-				<Grid Width="550" Height="400" Padding="12" HorizontalAlignment="Center" VerticalAlignment="Center">
-					<!--Width="650" Height="500"-->
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="auto"/>
-						<ColumnDefinition Width="*"/>
-					</Grid.ColumnDefinitions>
-
-					<StackPanel Width="170" Grid.Column="0" Spacing="5" BorderBrush="{ThemeResource SurfaceStrokeColorDefaultBrush}" BorderThickness="0 0 1 0" HorizontalAlignment="Left">
-						<TextBlock Text="Settings" Style="{StaticResource BodyLargeTextBlockStyle}" Margin="10 0 0 5"/>
-						<Button Content="Appearance" HorizontalContentAlignment="Left" Width="150"/>
-						<Button Content="Manage Characters" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Transparent" Width="150"/>
-						<Button Content="About" HorizontalContentAlignment="Left" Background="Transparent" BorderBrush="Transparent" Width="150"/>
-					</StackPanel>
-
-					<Grid Grid.Column="1" VerticalAlignment="Top">
-						<Button Click="ClosePopupClicked" Background="Transparent" BorderBrush="Transparent" Padding="3" Width="auto" Height="auto" HorizontalAlignment="Right">
-							<SymbolIcon Symbol="Cancel" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-						</Button>
-					</Grid>
-
-					<StackPanel Spacing="10" Margin="0 30 0 0" Grid.Column="1" HorizontalAlignment="Center">
-						<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
-							<TextBlock Text="Theme:" FontSize="15" Padding="0 0 0 3" VerticalAlignment="Center"/>
-							<ComboBox Width="100">
-								<x:String>System</x:String>
-								<x:String>Dark</x:String>
-								<x:String>Light</x:String>
-							</ComboBox>
-						</StackPanel>
-						<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
-							<TextBlock Text="Accent Colour:" FontSize="15" Padding="0 0 0 3" VerticalAlignment="Center"/>
-
-							<ComboBox x:Name="AccentColorComboBox" SelectionChanged="AccentColorComboBox_SelectionChanged" Width="100">
-								<x:String>System</x:String>
-								<x:String>Custom</x:String>
-							</ComboBox>
-
-							<Button x:Name="AccentColorButton" Width="30" Height="30"
-				BorderBrush="{ThemeResource SurfaceStrokeColorDefaultBrush}" BorderThickness="1" 
-				CornerRadius="100" >
-								<!--<SymbolIcon Symbol="Edit"/>-->
-								<Button.Background>
-									<SolidColorBrush Color="{x:Bind ColorPicker.Color, Mode=OneWay}"/>
-								</Button.Background>
-								<Button.Flyout>
-									<Flyout>
-										<StackPanel>
-											<Viewbox Width="200">
-												<ColorPicker x:Name="ColorPicker" Orientation="Horizontal"
-									IsColorPreviewVisible="False"
-									ColorSpectrumShape="Box"
-									IsMoreButtonVisible="False"
-									IsColorSliderVisible="True"
-									IsColorChannelTextInputVisible="False"
-									IsHexInputVisible="False"
-									IsAlphaEnabled="False"
-									IsAlphaSliderVisible="False"
-									IsAlphaTextInputVisible="False">
-												</ColorPicker>
-											</Viewbox>
-											<StackPanel Orientation="Horizontal">
-												<Button Content="Confirm"/>
-											</StackPanel>
-										</StackPanel>
-									</Flyout>
-								</Button.Flyout>
-							</Button>
-						</StackPanel>
-
-						<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
-							<TextBlock Text="Style:" FontSize="15" Padding="0 0 0 3" VerticalAlignment="Center"/>
-							<ComboBox Width="100">
-								<x:String>Windows 11</x:String>
-								<x:String>Bold</x:String>
-								<x:String>Windows XP</x:String>
-							</ComboBox>
-						</StackPanel>
-
-						<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
-							<TextBlock Text="Font:" FontSize="15" Padding="0 0 0 3" VerticalAlignment="Center"/>
-							<ComboBox Width="100">
-								<x:String>Windows 11</x:String>
-								<x:String>Bold</x:String>
-								<x:String>Windows XP</x:String>
-							</ComboBox>
-						</StackPanel>
-					</StackPanel>
-				</Grid>
-			</Border>
-		</Popup>
+		<controls:AppSettingsPopup x:Name="Popup"/>
 	</Grid>
 </Page>

@@ -1,4 +1,5 @@
 using DnDApp.CharacterClasses;
+using DnDApp.Controls;
 using DnDApp.Helpers;
 using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
@@ -29,20 +30,20 @@ public sealed partial class SelectCharacterPage : Page
 	{
 		InitializeComponent();
 
-		charList.Add(character1);
-		charList.Add(character2);
-		charList.Add(character3);
-		charList.Add(character4);
-		charList.Add(character5);
+		//charList.Add(character1);
+		//charList.Add(character2);
+		//charList.Add(character3);
+		//charList.Add(character4);
+		//charList.Add(character5);
 
-		if (charSetup == 0)
-		{
-			LoadCharList();
-		}
-		else if (charSetup == 1)
-		{
-			LoadCharGrid();
-		}
+		//if (charSetup == 0)
+		//{
+		//	LoadCharList();
+		//}
+		//else if (charSetup == 1)
+		//{
+		//	LoadCharGrid();
+		//}
 	}
 
 	private void LoadCharList()
@@ -105,24 +106,7 @@ public sealed partial class SelectCharacterPage : Page
 
 	private void SettingsButton_Click(object sender, RoutedEventArgs e)
 	{
-		if (!StandardPopup.IsOpen) { StandardPopup.IsOpen = true; }
+		Popup.PopupToggle();
 	}
-	private void ClosePopupClicked(object sender, RoutedEventArgs e)
-	{
-		// if the Popup is open, then close it
-		if (StandardPopup.IsOpen) { StandardPopup.IsOpen = false; }
-	}
-
-	private void AccentColorComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-	{
-		switch (AccentColorComboBox.SelectedIndex)
-		{
-			case 0:
-				AccentColorButton.IsEnabled = false;
-				break;
-			case 1:
-				AccentColorButton.IsEnabled = true;
-				break;
-		}
-	}
+	
 }

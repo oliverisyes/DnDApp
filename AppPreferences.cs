@@ -14,7 +14,7 @@ namespace DnDApp
 		{
 			CharacterPaths = null;
 			Theme = "System";
-			AccentColor = "System";
+			AccentColor = "#7328c9";
 			Font = "";
 		}
 

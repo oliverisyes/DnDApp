@@ -11,9 +11,20 @@
 				<!-- Other merged dictionaries here -->
 			</ResourceDictionary.MergedDictionaries>
 			<!-- Other app resources here -->
+			<Color x:Key="SystemAccentColorLight3">#9161c7</Color>
+			<Color x:Key="SystemAccentColorLight2">#9161c7</Color>
+			<Color x:Key="SystemAccentColorLight1">#9161c7</Color>
+			<Color x:Key="SystemAccentColor">#9161c7</Color>
+			<Color x:Key="SystemAccentColorDark1">#9161c7</Color>
+			<Color x:Key="SystemAccentColorDark2">#9161c7</Color>
+			<Color x:Key="SystemAccentColorDark3">#9161c7</Color>
+			<!--<SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="{ThemeResource SystemAccentColorLight1}"/>
+			<SolidColorBrush x:Key="ButtonBackgroundPressed" Color="{ThemeResource SystemAccentColorDark1}"/>-->
 			<Color x:Key="AccentColor"></Color>
+			<Color x:Key="DarkAccentColor">#531d91</Color>
 
-			<Style x:Key="HighlightButton" TargetType="Button" BasedOn="{StaticResource DefaultButtonStyle}">
+			<!-- default button -->
+			<!--<Style x:Key="AButton" TargetType="Button" BasedOn="{StaticResource DefaultButtonStyle}">
 				<Setter Property="Background" Value="{ThemeResource ButtonBackground}" />
 				<Setter Property="BackgroundSizing" Value="InnerBorderEdge" />
 				<Setter Property="Foreground" Value="{ThemeResource ButtonForeground}" />
@@ -80,7 +91,8 @@
 						</ControlTemplate>
 					</Setter.Value>
 				</Setter>
-			</Style>
+			</Style>-->
 		</ResourceDictionary>
     </Application.Resources>
 </Application>
+

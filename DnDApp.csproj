@@ -26,6 +26,8 @@
   <ItemGroup>
     <None Remove="AppPages\CharacterPage.xaml" />
     <None Remove="AppWindows\SelectCharacterWindow\SelectCharacterPage.xaml" />
+    <None Remove="Controls\AppSettingsPopup.xaml" />
+    <None Remove="Controls\CharacterSelectButton.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -113,5 +115,15 @@
   </ItemGroup>
   <ItemGroup>
     <PRIResource Remove="AppWindows\CharacterWindow\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Controls\AppSettingsPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Controls\CharacterSelectButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 </Project>

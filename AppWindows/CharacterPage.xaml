@@ -105,7 +105,7 @@
 					<RowDefinition Height="*"/>
 				</Grid.RowDefinitions>
 
-				<Image x:Name="CharImage" Source="C:\Users\olive\OneDrive\My stuff\DnD Characters\AppCharacters\Enphi\EnphiProfilePic.png" Grid.Column="0" Grid.Row="0"/>
+				<Image x:Name="CharImage" Source="C:\Users\olive\OneDrive\My stuff\DnD Characters\AppCharacters\Enphi\CharPic.png" Grid.Column="0" Grid.Row="0"/>
 				<!--<Image x:Name="CharImage" Source="C:\Users\Oliver Howard\OneDrive\My stuff\DnD Characters\AppCharacters\Enphi\EnphiProfilePic.png" Grid.Column="0" Grid.Row="0"/>-->
 				<Rectangle x:Name="CharImageBorder" Stroke="MediumPurple" StrokeThickness="3" RadiusX="100" RadiusY="100"/>
 			</Grid>
