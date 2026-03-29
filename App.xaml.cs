@@ -1,5 +1,7 @@
 ﻿using DnDApp.AppWindows;
 using Microsoft.UI.Xaml;
+using System;
+
 //using Microsoft.UI.Xaml.Shapes;
 using System.IO;
 
@@ -14,7 +16,9 @@ namespace DnDApp
 	public partial class App : Application
 	{
 		private Window? _window;
+		public AppData Data { get; set; }
 		public AppPreferences Preferences { get; set; }
+		public String DataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
 		/// <summary>
 		/// Initializes the singleton application object.  This is the first line of authored code
@@ -23,8 +27,8 @@ namespace DnDApp
 		public App()
 		{
 			Preferences = new AppPreferences();
-			Preferences.LoadAppPreferences(Path.GetFullPath(@"C:\Projects\ProgrammingProjects\DnDApp\bin\Debug\AppSettings.json"));
-			//settings.LoadAppPreferences(Path.GetFullPath(@"C:\Projects\DnDApp\bin\Debug\AppSettings.json"));
+			Data = new AppData();
+			LoadAppData(DataPath);
 			switch (Preferences.Theme)
 			{
 				case "Dark":
@@ -54,6 +58,14 @@ namespace DnDApp
 			};
 			_window.AppWindow.MoveAndResize(new Windows.Graphics.RectInt32(600, 200, 800, 600));
 			_window.Activate();
+		}
+
+		private void LoadAppData(String path)
+		{
+			Preferences.LoadAppPreferences(Path.Combine(DataPath, "AppSettings.json"));
+			Data.LoadAppData(Path.Combine(DataPath, "AppData.json"));
+			//Preferences.LoadAppPreferences(Path.GetFullPath(@"C:\Projects\ProgrammingProjects\DnDApp\bin\Debug\AppSettings.json"));
+			//settings.LoadAppPreferences(Path.GetFullPath(@"C:\Projects\DnDApp\bin\Debug\AppSettings.json"));
 		}
 	}
 }

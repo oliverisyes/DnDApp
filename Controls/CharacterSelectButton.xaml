@@ -26,7 +26,7 @@
 					</StackPanel>
 				</StackPanel>
 			</StackPanel>
-			<DropDownButton Content="Options" HorizontalAlignment="Right" Margin="0 0 28 0">
+			<DropDownButton Content="Options" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Right" Margin="0 0 28 0">
 				<DropDownButton.Flyout>
 					<MenuFlyout Placement="Bottom">
 						<MenuFlyoutItem Text="Edit"/>

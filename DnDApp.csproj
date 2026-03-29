@@ -109,6 +109,7 @@
     <GenerateTestArtifacts>True</GenerateTestArtifacts>
     <AppxBundle>Never</AppxBundle>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
+    <DefaultLanguage>en-gb</DefaultLanguage>
   </PropertyGroup>
   <ItemGroup>
     <PRIResource Remove="AppWindows\NewCharacterWindow\**" />

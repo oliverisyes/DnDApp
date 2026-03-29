@@ -5,14 +5,12 @@ namespace DnDApp
 {
 	public class AppPreferences
 	{
-		public string[]? CharacterPaths { get; set; }
 		public string Theme { get; set; }
 		public string AccentColor { get; set; }
 		public string Font { get; set; }
 
 		public AppPreferences()
 		{
-			CharacterPaths = null;
 			Theme = "System";
 			AccentColor = "#7328c9";
 			Font = "";
@@ -28,7 +26,6 @@ namespace DnDApp
 				var tempSetting = JsonSerializer.Deserialize<AppPreferences>(jsonString);
 				if (tempSetting != null)
 				{
-					CharacterPaths = tempSetting.CharacterPaths;
 					Theme = tempSetting.Theme;
 					AccentColor = tempSetting.AccentColor;
 				}
