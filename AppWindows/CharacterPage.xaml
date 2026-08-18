@@ -4,22 +4,241 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:DnDApp.AppWindows"
+	xmlns:modules="using:DnDApp.Controls.SheetModules"
+	xmlns:ctcontrols="using:CommunityToolkit.WinUI.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-	<Grid x:Name="MotherGrid" Padding="50">
+	<Grid x:Name="RootGrid" Margin="40">
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="*"/>
 			<ColumnDefinition Width="*"/>
 		</Grid.ColumnDefinitions>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="0.2*"/>
-			<RowDefinition Height="0.2*"/>
-			<RowDefinition Height="0.6*"/>
-		</Grid.RowDefinitions>
 
-		<Grid x:Name="CharInfoContainer" Width="380" Height="110" Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="0" Grid.RowSpan="1" HorizontalAlignment="Left">
+		<Grid x:Name="First" Grid.Column="0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="auto"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+
+			<Grid x:Name="FirstFirst" Grid.Row="0">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="auto"/>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+
+				<Grid x:Name="FirstFirstFirst" Grid.Column="0">
+					<Grid x:Name="FirstFirstFirstFirst" Grid.Row="0">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="auto"/>
+							<RowDefinition Height="*"/>
+						</Grid.RowDefinitions>
+
+						<Grid x:Name="FirstFirstFirstFirstFirst" Grid.Row="0" Padding="5">
+							<modules:CharacterInfoModule/>
+						</Grid>
+						<Grid x:Name="FirstFirstFirstFirstSecond" Grid.Row="1" Padding="5">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="auto"/>
+								<RowDefinition Height="auto"/>
+							</Grid.RowDefinitions>
+							
+							<Grid x:Name="FirstFirstFirstSecondFirst" Grid.Row="0" Padding="5">
+								<modules:AbilitiesModule/>
+							</Grid>
+							<Grid x:Name="FirstFirstFirstSecondSecond" Grid.Row="1" Padding="5">
+								<modules:SkillsModule/>
+							</Grid>
+
+							<ctcontrols:GridSplitter Grid.Row="1" Height="10" VerticalAlignment="Top">
+								<ctcontrols:GridSplitter.RenderTransform>
+									<TranslateTransform Y="-5"/>
+								</ctcontrols:GridSplitter.RenderTransform>
+							</ctcontrols:GridSplitter>
+						</Grid>
+
+						<ctcontrols:GridSplitter Grid.Row="1" Height="10" VerticalAlignment="Top">
+							<ctcontrols:GridSplitter.RenderTransform>
+								<TranslateTransform Y="-5"/>
+							</ctcontrols:GridSplitter.RenderTransform>
+						</ctcontrols:GridSplitter>
+					</Grid>
+				</Grid>
+				<Grid x:Name="FirstFirstSecond" Grid.Column="1" Padding="5">
+					<Rectangle x:Name="Stream" Fill="Yellow" RadiusX="8" RadiusY="8"/>
+				</Grid>
+
+				<ctcontrols:GridSplitter Grid.Column="1" Width="10" HorizontalAlignment="Left">
+					<ctcontrols:GridSplitter.RenderTransform>
+						<TranslateTransform X="-5"/>
+					</ctcontrols:GridSplitter.RenderTransform>
+				</ctcontrols:GridSplitter>
+			</Grid>
+			<Grid x:Name="FirstSecond" Grid.Row="1">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+
+				<Grid x:Name="FirstSecondFirst" Grid.Column="0">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*"/>
+						<ColumnDefinition Width="*"/>
+					</Grid.ColumnDefinitions>
+
+					<Grid x:Name="FirstSecondFirstFirst" Grid.Column="0" Padding="5">
+						<Rectangle x:Name="ModActions" Fill="Green" RadiusX="8" RadiusY="8"/>
+					</Grid>
+					<Grid x:Name="FirstSecondFirstSecond" Grid.Column="1" Padding="5">
+						<Rectangle x:Name="ActivityFeed" Fill="Green" RadiusX="8" RadiusY="8"/>
+					</Grid>
+
+					<ctcontrols:GridSplitter Grid.Column="1" Width="10" HorizontalAlignment="Left">
+						<ctcontrols:GridSplitter.RenderTransform>
+							<TranslateTransform X="-5"/>
+						</ctcontrols:GridSplitter.RenderTransform>
+					</ctcontrols:GridSplitter>
+				</Grid>
+				<Grid x:Name="FirstSecondSecond" Grid.Column="1">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*"/>
+						<ColumnDefinition Width="*"/>
+					</Grid.ColumnDefinitions>
+
+					<Grid x:Name="FirstSecondSecondFirst" Grid.Column="0" Padding="5">
+						<Rectangle x:Name="AutomodQueue" Fill="Green" RadiusX="8" RadiusY="8"/>
+					</Grid>
+					<Grid x:Name="FirstSecondSecondSecond" Grid.Column="1" Padding="5">
+						<Rectangle x:Name="RewardRequestsQueue" Fill="Green" RadiusX="8" RadiusY="8"/>
+					</Grid>
+
+					<ctcontrols:GridSplitter Grid.Column="1" Width="10" HorizontalAlignment="Left">
+						<ctcontrols:GridSplitter.RenderTransform>
+							<TranslateTransform X="-5"/>
+						</ctcontrols:GridSplitter.RenderTransform>
+					</ctcontrols:GridSplitter>
+				</Grid>
+
+				<ctcontrols:GridSplitter Grid.Column="1" Width="10" HorizontalAlignment="Left">
+					<ctcontrols:GridSplitter.RenderTransform>
+						<TranslateTransform X="-5"/>
+					</ctcontrols:GridSplitter.RenderTransform>
+				</ctcontrols:GridSplitter>
+			</Grid>
+
+			<ctcontrols:GridSplitter Grid.Row="1" Height="10" VerticalAlignment="Top">
+				<ctcontrols:GridSplitter.RenderTransform>
+					<TranslateTransform Y="-5"/>
+				</ctcontrols:GridSplitter.RenderTransform>
+			</ctcontrols:GridSplitter>
+		</Grid>
+		<Grid x:Name="Second" Grid.Column="1" Padding="5">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+			
+			<Grid x:Name="SecondFirst" Grid.Row="0" Padding="5">
+				
+			</Grid>
+			<Grid x:Name="SecondSecond" Grid.Row="1" Padding="5">
+				<StackPanel x:Name="VitalsInfoContainer" Width="260" Height="600" Grid.Column="7" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="4" HorizontalAlignment="Left">
+					<StackPanel x:Name="ArmourInitiativeSpeedContainer" Orientation="Horizontal" Margin="0 0 0 10">
+						<StackPanel x:Name="ArmourContainer" Width="80" Height="90" Margin="0 0 10 0" Padding="10 10 10 0" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="15">
+							<StackPanel.Background>
+								<SolidColorBrush Color="Black" Opacity="0.4"/>
+							</StackPanel.Background>
+
+							<TextBlock Text="Armour" HorizontalAlignment="Center"/>
+							<TextBlock Text="13" FontSize="30" HorizontalAlignment="Center"/>
+						</StackPanel>
+						<StackPanel x:Name="InitiativeContainer" Width="80" Height="90" Margin="0 0 10 0" Padding="10 10 10 0" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="15">
+							<StackPanel.Background>
+								<SolidColorBrush Color="Black" Opacity="0.4"/>
+							</StackPanel.Background>
+
+							<TextBlock Text="Initiative" HorizontalAlignment="Center"/>
+							<TextBlock Text="+2" FontSize="30" HorizontalAlignment="Center"/>
+						</StackPanel>
+						<StackPanel x:Name="SpeedContainer" Width="80" Height="90" Padding="10 10 10 0" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="15">
+							<StackPanel.Background>
+								<SolidColorBrush Color="Black" Opacity="0.4"/>
+							</StackPanel.Background>
+
+							<TextBlock Text="Speed" HorizontalAlignment="Center"/>
+							<TextBlock Text="30" FontSize="30" HorizontalAlignment="Center"/>
+						</StackPanel>
+					</StackPanel>
+					<StackPanel x:Name="HitPointsContainer" Orientation="Horizontal" Margin="0 0 0 10"  Padding="15" HorizontalAlignment="Center" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="15">
+						<StackPanel.Background>
+							<SolidColorBrush Color="Black" Opacity="0.4"/>
+						</StackPanel.Background>
+
+						<StackPanel x:Name="CurrentHitPointsContainer" Padding="0 0 20 0">
+							<TextBlock Text="Current" HorizontalAlignment="Center"/>
+							<TextBlock Text="23" FontSize="30" HorizontalAlignment="Center"/>
+						</StackPanel>
+						<StackPanel x:Name="MaxHitPointsContainer" Padding="0 0 20 0">
+							<TextBlock Text="Max" HorizontalAlignment="Center"/>
+							<TextBlock Text="23" FontSize="30" HorizontalAlignment="Center"/>
+						</StackPanel>
+						<StackPanel x:Name="TempHitPointsContainer" Padding="0 0 0 0">
+							<TextBlock Text="Temp" HorizontalAlignment="Center"/>
+							<TextBlock Text="" FontSize="30" HorizontalAlignment="Center"/>
+						</StackPanel>
+					</StackPanel>
+					<StackPanel x:Name="HitDiceDeathSaveContainer" Orientation="Horizontal">
+
+						<StackPanel x:Name="HitDiceContainer" Width="100" Margin="0 0 5 0" Padding="10" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="15">
+							<StackPanel.Background>
+								<SolidColorBrush Color="Black" Opacity="0.4"/>
+							</StackPanel.Background>
+
+							<TextBlock Text="Hit Dice" Margin="0 0 0 3" HorizontalAlignment="Center"/>
+							<TextBlock Text="Current: 3" FontSize="17" HorizontalAlignment="Center"/>
+							<TextBlock Text="Max: 3" FontSize="15" HorizontalAlignment="Center"/>
+						</StackPanel>
+						<StackPanel x:Name="DeathSaveContainer" Width="120" Margin="5 0 0 0" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="15">
+							<StackPanel.Background>
+								<SolidColorBrush Color="Black" Opacity="0.4"/>
+							</StackPanel.Background>
+
+							<TextBlock Text="Death Saves" HorizontalAlignment="Center"/>
+
+							<StackPanel x:Name="SuccessesContainer" Orientation="Horizontal">
+								<TextBlock Text="Successes" VerticalAlignment="Center"/>
+								<ToggleButton Width="10" Height="10" BorderBrush="Lavender" CornerRadius="100"/>
+								<ToggleButton Width="10" Height="10" BorderBrush="Lavender" CornerRadius="100"/>
+								<ToggleButton Width="10" Height="10" BorderBrush="Lavender" CornerRadius="100"/>
+							</StackPanel>
+							<StackPanel x:Name="FailuresContainer" Orientation="Horizontal">
+								<TextBlock Text="Failures" VerticalAlignment="Center"/>
+								<CheckBox CornerRadius="10"/>
+								<CheckBox CornerRadius="10"/>
+								<CheckBox CornerRadius="10"/>
+							</StackPanel>
+						</StackPanel>
+					</StackPanel>
+				</StackPanel>
+			</Grid>
+
+			<ctcontrols:GridSplitter Grid.Row="1" Height="10" VerticalAlignment="Top">
+				<ctcontrols:GridSplitter.RenderTransform>
+					<TranslateTransform Y="-5"/>
+				</ctcontrols:GridSplitter.RenderTransform>
+			</ctcontrols:GridSplitter>
+		</Grid>
+
+		<ctcontrols:GridSplitter Grid.Column="1" Width="10" HorizontalAlignment="Left">
+			<ctcontrols:GridSplitter.RenderTransform>
+				<TranslateTransform X="-5"/>
+			</ctcontrols:GridSplitter.RenderTransform>
+		</ctcontrols:GridSplitter>
+	</Grid>
+
+	<!--<Grid x:Name="MotherGrid" Padding="50">
+		<Grid x:Name="CharInfoContainer" Width="380" Height="110" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="0" Grid.RowSpan="2" HorizontalAlignment="Left">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="0.35*"/>
 				<ColumnDefinition Width="*"/>
@@ -106,12 +325,12 @@
 				</Grid.RowDefinitions>
 
 				<Image x:Name="CharImage" Source="C:\Users\olive\OneDrive\My stuff\DnD Characters\AppCharacters\Enphi\CharPic.png" Grid.Column="0" Grid.Row="0"/>
-				<!--<Image x:Name="CharImage" Source="C:\Users\Oliver Howard\OneDrive\My stuff\DnD Characters\AppCharacters\Enphi\EnphiProfilePic.png" Grid.Column="0" Grid.Row="0"/>-->
+				--><!--<Image x:Name="CharImage" Source="C:\Users\Oliver Howard\OneDrive\My stuff\DnD Characters\AppCharacters\Enphi\EnphiProfilePic.png" Grid.Column="0" Grid.Row="0"/>--><!--
 				<Rectangle x:Name="CharImageBorder" Stroke="MediumPurple" StrokeThickness="3" RadiusX="100" RadiusY="100"/>
 			</Grid>
 		</Grid>
 
-		<Grid x:Name="AbilityScoresContainer" Width="550" Height="115" HorizontalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="1" Grid.RowSpan="1">
+		<Grid x:Name="AbilityScoresContainer" Width="550" Height="115" HorizontalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="7" Grid.Row="2" Grid.RowSpan="2">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="10*"/>
 				<ColumnDefinition Width="*"/>
@@ -203,7 +422,7 @@
 			</StackPanel>
 		</Grid>
 
-		<Grid x:Name="SavingThrowsContainer" Width="330" Height="220" Padding="15 5 15 0" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="2" Grid.RowSpan="1" HorizontalAlignment="Left" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="40">
+		<Grid x:Name="SavingThrowsContainer" Width="330" Height="220" Padding="15 5 15 0" Grid.Column="8" Grid.ColumnSpan="4" Grid.Row="4" Grid.RowSpan="3" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="40">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="*"/>
 				<ColumnDefinition Width="0.15*"/>
@@ -305,7 +524,7 @@
 			</StackPanel>
 		</Grid>
 
-		<Grid x:Name="SkillsContainer" Width="650" Height="390" Padding="15 5 15 0" Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="3" Grid.RowSpan="5" HorizontalAlignment="Center" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="40">
+		<Grid x:Name="SkillsContainer" Width="650" Height="390" Padding="15 5 15 0" Grid.Column="0" Grid.ColumnSpan="8" Grid.Row="4" Grid.RowSpan="5" HorizontalAlignment="Center" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="40">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="*"/>
 				<ColumnDefinition Width="0.08*"/>
@@ -568,7 +787,7 @@
 			</StackPanel>
 		</Grid>
 
-		<StackPanel x:Name="VitalsInfoContainer" Width="260" Height="600" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0" Grid.RowSpan="3">
+		<StackPanel x:Name="VitalsInfoContainer" Width="260" Height="600" Grid.Column="7" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="4">
 			<StackPanel x:Name="ArmourInitiativeSpeedContainer" Orientation="Horizontal" Margin="0 0 0 10">
 				<StackPanel x:Name="ArmourContainer" Width="80" Height="90" Margin="0 0 10 0" Padding="10 10 10 0" BorderBrush="MediumPurple" BorderThickness="2" CornerRadius="15">
 					<StackPanel.Background>
@@ -610,7 +829,7 @@
 				</StackPanel>
 				<StackPanel x:Name="TempHitPointsContainer" Padding="0 0 0 0">
 					<TextBlock Text="Temp" HorizontalAlignment="Center"/>
-					<TextBlock Text="--" FontSize="30" HorizontalAlignment="Center"/>
+					<TextBlock Text="" FontSize="30" HorizontalAlignment="Center"/>
 				</StackPanel>
 			</StackPanel>
 			<StackPanel x:Name="HitDiceDeathSaveContainer" Orientation="Horizontal">
@@ -646,5 +865,17 @@
 				</StackPanel>
 			</StackPanel>
 		</StackPanel>
-	</Grid>
+
+		<controls:GridSplitter Grid.Column="1"
+							   Grid.ColumnSpan="1"
+                               Width="1"
+                               HorizontalAlignment="Left"
+                               ResizeBehavior="BasedOnAlignment"
+                               ResizeDirection="Auto">
+			<controls:GridSplitter.RenderTransform>
+				<TranslateTransform X="-7" />
+			</controls:GridSplitter.RenderTransform>
+		</controls:GridSplitter>
+
+	</Grid>-->
 </Page>

@@ -53,6 +53,7 @@
     <ProjectCapability Include="Msix" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="CommunityToolkit.WinUI.Controls.Sizers" Version="8.2.251219" />
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.7175" />
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.251106002" />
   </ItemGroup>
@@ -118,6 +119,9 @@
     <PRIResource Remove="AppWindows\CharacterWindow\**" />
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Controls\CharacterImage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Controls\AppSettingsPopup.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -125,6 +129,15 @@
   <ItemGroup>
     <Page Update="Controls\CharacterSelectButton.xaml">
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Controls\CharacterSheet\CharacterInfoModule.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\SheetModules\HitPointsModule.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\SheetModules\SkillsModule.xaml">
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
 </Project>
