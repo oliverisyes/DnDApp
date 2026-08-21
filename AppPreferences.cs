@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System;
+using System.Diagnostics;
+using System.IO;
 using System.Text.Json;
 
 namespace DnDApp
@@ -24,7 +26,7 @@ namespace DnDApp
 			{
 				string jsonString = File.ReadAllText(path);
 				var tempSetting = JsonSerializer.Deserialize<AppPreferences>(jsonString);
-				if (tempSetting != null)
+                if (tempSetting != null)
 				{
 					Theme = tempSetting.Theme;
 					AccentColor = tempSetting.AccentColor;
@@ -32,9 +34,8 @@ namespace DnDApp
 			}
 			else
 			{
-				File.Create(path).Close();
-
-				string jsonString = JsonSerializer.Serialize(this);
+                string jsonString = JsonSerializer.Serialize(this);
+                File.Create(path).Close();
 				File.WriteAllText(path, jsonString);
 			}
 		}

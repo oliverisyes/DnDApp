@@ -13,8 +13,8 @@ namespace DnDApp.Helpers
 
 			if (type == "listchar")
 			{
-				button.Name = SelectCharacterPage.charList[num];
-				button.Content = SelectCharacterPage.charList[num];
+				//button.Name = App.CharList[num];
+				//button.Content = App.CharList[num];
 				button.HorizontalAlignment = HorizontalAlignment.Stretch;
 			}
 			else if (type == "gridchar")

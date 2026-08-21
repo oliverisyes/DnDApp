@@ -6,6 +6,7 @@ using Microsoft.UI.Xaml.Controls.Primitives;
 using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
+using Microsoft.UI.Xaml.Media.Imaging;
 using Microsoft.UI.Xaml.Navigation;
 using System;
 using System.Collections.Generic;
@@ -22,9 +23,12 @@ namespace DnDApp.Controls;
 
 public sealed partial class CharacterSelectButton : UserControl
 {
-    public CharacterSelectButton()
+    public CharacterSelectButton(CharacterClasses.Character character)
     {
         InitializeComponent();
+        NameText.Text = character._name;
+        CharImage.Source = new BitmapImage(character._imageUri);
+        ImagePathText.Text = character._filePath;
     }
 
 	private void CharButton_Click(object sender, RoutedEventArgs e)

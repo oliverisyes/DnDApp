@@ -22,13 +22,14 @@ public sealed partial class SelectCharacterPage : Page
 	String character3 = "Ash";
 	String character4 = "Jen";
 	String character5 = "Enphi";
-	public static List<String> charList = new List<string>();
+	//public static List<Character> charList = new List<Character>();
 	int charSetup = 0;
 	int charCols = 4;
 
 	public SelectCharacterPage()
 	{
 		InitializeComponent();
+		LoadCharList();
 
 		//charList.Add(character1);
 		//charList.Add(character2);
@@ -50,9 +51,10 @@ public sealed partial class SelectCharacterPage : Page
 	{
 		StackPanel charPanel = this.charPanel;
 
-		for (int i = 0; i < charList.Count; i++)
+		for (int i = 0; i < App.CharList.Count; i++)
 		{
-			charPanel.Children.Add(LoadCharButton(charPanel, i));
+			charPanel.Children.Add(new CharacterSelectButton(App.CharList[i]));
+			//charPanel.Children.Add(LoadCharButton(charPanel, i));
 		}
 	}
 
@@ -60,7 +62,7 @@ public sealed partial class SelectCharacterPage : Page
 	{
 		StackPanel charPanel = this.charPanel;
 
-		for (int i = 0; i < charList.Count / charCols; i++)
+		for (int i = 0; i < App.CharList.Count / charCols; i++)
 		{
 			charPanel.Children.Add(CharGridLayer());
 		}

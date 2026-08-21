@@ -1,13 +1,17 @@
 ﻿using DnDApp.AppWindows;
+using Microsoft.UI.Xaml.Controls;
+using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace DnDApp.CharacterClasses
 {
-	internal class Character
+	public class Character
 	{
-		private string _filePath;
-
-		private string _name;
+		public string _filePath;
+		public int _id;
+		public string _name;
+		public Uri _imageUri;
 
 		private int _level;
 		private int _exp;
@@ -25,9 +29,30 @@ namespace DnDApp.CharacterClasses
 
 		private Item[] _inventory;
 
-		public Character()
+		public Character(string path, int id)
 		{
+            DirectoryInfo dir = new DirectoryInfo(path);
 
+            if (dir.Exists)
+			{
+				string name = dir.Name;
+				DirectoryInfo[] folders = dir.GetDirectories();
+				FileInfo[] files = dir.GetFiles();
+
+                _filePath = path;
+                _id = id;
+                _name = name;
+
+				foreach (FileInfo file in files)
+				{
+					string ext = file.Extension;
+					if (file.Exists && file.Name == "CharPic.png")
+					{
+                        _imageUri = new Uri(file.FullName);
+                    }
+				}
+                
+            }
 		}
 
 		public static void NewCharWindow()

@@ -1,11 +1,22 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Text.Json;
+using Windows.Storage.Pickers;
+using Windows.System;
 
 namespace DnDApp
 {
 	public class AppData
 	{
-		public string[]? CharacterPaths { get; set; }
+		public List<string> CharacterPaths { get; set; }
+
+		public AppData() 
+		{
+			CharacterPaths = new();
+			//CharacterPaths.Add("path0");
+            //CharacterPaths.Add("path1");
+        }
 
 		public void LoadAppData(string path)
 		{
@@ -13,7 +24,8 @@ namespace DnDApp
 
 			if (File.Exists(path))
 			{
-				string jsonString = File.ReadAllText(path);
+                string otherpath = Path.GetFullPath(path);
+                string jsonString = File.ReadAllText(path);
 				var tempSetting = JsonSerializer.Deserialize<AppData>(jsonString);
 				if (tempSetting != null)
 				{
@@ -22,9 +34,8 @@ namespace DnDApp
 			}
 			else
 			{
-				File.Create(path).Close();
-
-				string jsonString = JsonSerializer.Serialize(this);
+                string jsonString = JsonSerializer.Serialize(this);
+                File.Create(path).Close();
 				File.WriteAllText(path, jsonString);
 			}
 		}

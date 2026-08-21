@@ -38,10 +38,10 @@
 			
 			<ScrollView Height="300">
 				<StackPanel x:Name="charPanel" Spacing="5">
+					<!--<controls:CharacterSelectButton/>
 					<controls:CharacterSelectButton/>
 					<controls:CharacterSelectButton/>
-					<controls:CharacterSelectButton/>
-					<controls:CharacterSelectButton/>
+					<controls:CharacterSelectButton/>-->
 				</StackPanel>
 			</ScrollView>
 		</StackPanel>

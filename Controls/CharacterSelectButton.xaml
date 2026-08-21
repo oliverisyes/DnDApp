@@ -12,17 +12,17 @@
 		<Grid Width="500">
 			<StackPanel Orientation="Horizontal">
 				<Grid Width="50" Margin="0 2 5 0" CornerRadius="100">
-					<Image x:Name="CharImage" Source="C:\Users\olive\OneDrive\My stuff\DnD Characters\AppCharacters\Enphi\CharPic.png"/>
+					<Image x:Name="CharImage" Source="null"/>
 				</Grid>
 				<StackPanel VerticalAlignment="Center">
-					<TextBlock Text="Enphi" FontSize="16"/>
+					<TextBlock x:Name="NameText" Text="null" FontSize="16"/>
 					<StackPanel Orientation="Horizontal"  Width="300">
-						<TextBlock Visibility="Collapsed" Text="C:\Users\olive\OneDrive\My stuff\DnD Characters\AppCharacters\Enphi\CharPic.png" FontSize="12"/>
-						<TextBlock Text="Level 3" FontSize="12"/>
+						<TextBlock x:Name="ImagePathText" Visibility="Collapsed" Text="null" FontSize="12"/>
+						<TextBlock x:Name="LevelText" Text="null" FontSize="12"/>
 						<AppBarSeparator Height="20" Padding="4"/>
-						<TextBlock Text="Tiefling" FontSize="12"/>
+						<TextBlock x:Name="SpeciesText" Text="null" FontSize="12"/>
 						<AppBarSeparator Height="20" Padding="4"/>
-						<TextBlock Text="Druid - Circle of Wildfire" FontSize="12"/>
+						<TextBlock x:Name="ClassText" Text="null" FontSize="12"/>
 					</StackPanel>
 				</StackPanel>
 			</StackPanel>

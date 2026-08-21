@@ -1,7 +1,10 @@
 ﻿using DnDApp.AppWindows;
+using DnDApp.CharacterClasses;
 using Microsoft.UI.Xaml;
 using System;
-
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics;
 //using Microsoft.UI.Xaml.Shapes;
 using System.IO;
 
@@ -18,17 +21,21 @@ namespace DnDApp
 		private Window? _window;
 		public AppData Data { get; set; }
 		public AppPreferences Preferences { get; set; }
-		public String DataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+		public string AppDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
-		/// <summary>
-		/// Initializes the singleton application object.  This is the first line of authored code
-		/// executed, and as such is the logical equivalent of main() or WinMain().
-		/// </summary>
-		public App()
+        public static List<Character> CharList = new List<Character>();
+
+        /// <summary>
+        /// Initializes the singleton application object.  This is the first line of authored code
+        /// executed, and as such is the logical equivalent of main() or WinMain().
+        /// </summary>
+        public App()
 		{
 			Preferences = new AppPreferences();
 			Data = new AppData();
-			LoadAppData(DataPath);
+			LoadAppData(AppDataPath);
+			LoadCharacters();
+
 			switch (Preferences.Theme)
 			{
 				case "Dark":
@@ -38,6 +45,7 @@ namespace DnDApp
 					Current.RequestedTheme = ApplicationTheme.Light;
 					break;
 			}
+			
 			InitializeComponent();
 		}
 
@@ -52,20 +60,36 @@ namespace DnDApp
 				Current.Resources["AccentColor"] = Preferences.AccentColor;
 			}
 
-			_window = new SelectCharacterWindow
-			{
-				ExtendsContentIntoTitleBar = true
-			};
-			_window.AppWindow.MoveAndResize(new Windows.Graphics.RectInt32(600, 200, 800, 600));
-			_window.Activate();
+			new SelectCharacterWindow(800, 600, 900, 700).Activate();
 		}
 
 		private void LoadAppData(String path)
 		{
-			Preferences.LoadAppPreferences(Path.Combine(DataPath, "AppSettings.json"));
-			Data.LoadAppData(Path.Combine(DataPath, "AppData.json"));
-			//Preferences.LoadAppPreferences(Path.GetFullPath(@"C:\Projects\ProgrammingProjects\DnDApp\bin\Debug\AppSettings.json"));
-			//settings.LoadAppPreferences(Path.GetFullPath(@"C:\Projects\DnDApp\bin\Debug\AppSettings.json"));
+			Preferences.LoadAppPreferences(Path.Combine(path, "DnDApp//" + "AppSettings.json"));
+			Data.LoadAppData(Path.Combine(path, "DnDApp//" + "AppData.json"));
+
+			//string chara = Data.CharacterPaths[0];
+   //         ProcessStartInfo startInfo = new ProcessStartInfo(chara)
+   //         {
+   //             UseShellExecute = true
+   //         };
+
+   //         Process.Start(startInfo);
+
+
+            //Preferences.LoadAppPreferences(Path.GetFullPath(@"C:\Projects\ProgrammingProjects\DnDApp\bin\Debug\AppSettings.json"));
+            //settings.LoadAppPreferences(Path.GetFullPath(@"C:\Projects\DnDApp\bin\Debug\AppSettings.json"));
+        }
+
+		private void LoadCharacters()
+		{
+			List<string> paths = Data.CharacterPaths;
+
+			for (int i = 0; i < paths.Count; i++)
+			{
+                CharacterClasses.Character character = new CharacterClasses.Character(paths[i], i);
+				CharList.Add(character);
+			}
 		}
 	}
 }
